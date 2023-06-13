@@ -1,0 +1,179 @@
+{
+	"skins" : [
+		{
+			"id" :              "JAGFx",
+			"title" :           "JAGFx dashboard",
+			"disabled" :        false,
+			"description" :     "Common dashboard for Euro truck Simulator 2 and American Truck Simulator 2",
+			"config_template" : "true",
+			"author" :          {
+				"name" :  "SMITH Emmanuel",
+				"email" : "hey@emmanuel-smith.me",
+				"url" :   "https://emmanuel-smith.me"
+			},
+			"repository" :      {
+				"name" : "ets2-dashboard-skin",
+				"url" :  "https://github.com/JAGFx/ets2-dashboard-skin"
+			},
+			"screenshot" :      "https://github.com/JAGFx/ets2-dashboard-skin/raw/master/screenshot.png",
+			"size" :            {
+				"width" :  800,
+				"height" : 400
+			}
+		},
+		{
+			"id" :              "Map",
+			"disabled" :        false,
+			"title" :           "Map",
+			"description" :     "The map from the route advisor",
+			"config_template" : "true",
+			"author" :          {
+				"name" :  "SMITH Emmanuel",
+				"email" : "hey@emmanuel-smith.me",
+				"url" :   "https://emmanuel-smith.me"
+			},
+			"repository" :      null,
+			"screenshot" :      "img/screenshots/maps.png",
+			"size" :            {
+				"width" :  1920,
+				"height" : 1080
+			}
+		},
+		{
+			"id" :          "Test",
+			"disabled" :    false,
+			"title" :       "Base",
+			"description" : "Simple dashboard with speed",
+			"author" :      {
+				"name" :  "SMITH Emmanuel",
+				"email" : "hey@emmanuel-smith.me",
+				"url" :   "https://emmanuel-smith.me"
+			},
+			"repository" :  null,
+			"screenshot" :  "img/screenshots/test.png",
+			"size" :        {
+				"width" :  0,
+				"height" : 0
+			}
+		},
+		{
+			"id" :          "Default",
+			"disabled" :    false,
+			"title" :       "Default",
+			"description" : "Generic Dashboard",
+			"author" :      {
+				"name" :  "Funbit",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/default",
+			"screenshot" :  "img/screenshots/default.png",
+			"size" :        {
+				"width" :  2048,
+				"height" : 1152
+			}
+		},
+		{
+			"id" :          "DafXF",
+			"disabled" :    false,
+			"title" :       "DAF XF",
+			"description" : "DAF XF Dashboard",
+			"author" :      {
+				"name" :  "Klauzzy",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/daf-xf",
+			"screenshot" :  "img/screenshots/daf-xf.png",
+			"size" :        {
+				"width" :  2000,
+				"height" : 1056
+			}
+		},
+		{
+			"id" :          "ManTGX",
+			"disabled" :    false,
+			"title" :       "Man TGX",
+			"description" : "MAN TGX Dashboard",
+			"author" :      {
+				"name" :  "Klauzzy",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/man-tgx",
+			"screenshot" :  "img/screenshots/man-tgx.png",
+			"size" :        {
+				"width" :  2048,
+				"height" : 1152
+			}
+		},
+		{
+			"id" :          "MercedesAtego",
+			"disabled" :    false,
+			"title" :       "Mercedes Benz Atego",
+			"description" : "Mercedes Benz Atego MP4 Dashboard",
+			"author" :      {
+				"name" :  "Klauzzy",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/mercedes-atego",
+			"screenshot" :  "img/screenshots/mercedes-atego.png",
+			"size" :        {
+				"width" :  1501,
+				"height" : 779
+			}
+		},
+		{
+			"id" :          "RdInfo",
+			"disabled" :    false,
+			"title" :       "RD-Info",
+			"description" : "RenaultDash-Info",
+			"author" :      {
+				"name" :  "Argiano",
+				"email" : "van_argiano@outlook.com",
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/rd-info",
+			"screenshot" :  "img/screenshots/rd-info.png",
+			"size" :        {
+				"width" :  1920,
+				"height" : 1440
+			}
+		},
+		{
+			"id" :          "Scania",
+			"disabled" :    false,
+			"title" :       "Scania",
+			"description" : "Scania Dashboard",
+			"author" :      {
+				"name" :  "Klauzzy",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/scania",
+			"screenshot" :  "img/screenshots/scania.png",
+			"size" :        {
+				"width" :  2030,
+				"height" : 1035
+			}
+		},
+		{
+			"id" :          "VolvoFH",
+			"disabled" :    false,
+			"title" :       "Volvo FH",
+			"description" : "Volvo FH 2012 Dashboard",
+			"author" :      {
+				"name" :  "Klauzzy",
+				"email" : null,
+				"url" :   null
+			},
+			"repository" :  "https://github.com/Funbit/ets2-telemetry-server/tree/master/server/Html/skins/volvo-fh",
+			"screenshot" :  "img/screenshots/volvo-fh.png",
+			"size" :        {
+				"width" :  2000,
+				"height" : 664
+			}
+		}
+	]
+}

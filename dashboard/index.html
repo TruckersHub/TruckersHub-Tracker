@@ -1,0 +1,1705 @@
+<html>
+
+<head>
+    <title>TruckersHub</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/favicon.ico">
+    <link href="/icons/icons.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="" id="main">
+        <div id="header">
+            <nav class="header-game-information-overlay" id="game">
+                <ul class="w-100">
+                    <!-- <li><span>API</span>v0.9.5 </li> -->
+                    <li><span>©</span>TruckersHub </li>
+                </ul>
+                <div class="game-time">
+                    <span>
+                        Fri 9:25 AM
+                    </span>
+                </div>
+                <ul class="w-100">
+                    <li>
+                        <a style="cursor: pointer;" onclick="menu()">
+                            <span id="bars">
+                                Menu <i class="fas fa-bars"></i>️
+                            </span>
+                            <span id="times" style="display: none;">
+                                Close <i class="fas fa-times"></i>️
+                            </span>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <span>
+                            <i class="fas fa-expand"></i>
+                        </span>
+                        <span style="display: none;">
+                            <i class="fas fa-compress"></i>
+                        </span>
+                    </li> -->
+                </ul>
+            </nav>
+            <div class="wrapper menu h-100" id="menu" style="display: none;">
+                <div class="menu h-100">
+                    <nav>
+                        <ul>
+                            <li class="active" id="skins" onclick="menuopt('skins')" style="cursor: pointer;">
+                                Skins
+                            </li>
+                            <li class="" id="config" onclick="menuopt('config')" style="cursor: pointer;">
+                                Config
+                            </li>
+                            <li class="" id="about" onclick="menuopt('about')" style="cursor: pointer;">
+                                About
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tab-skins tab-content h-100" id="dashList">
+                        <div class="card text-white mb-3" id="default">
+                            <div>
+                                <img src="img/screenshots/default.png" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    Default
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    InsanoDeath
+                                    <a href="https://insanodev.com/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0"> Generic Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-success" onclick="activate('default')">
+                                    Activate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <!-- <div><img src="img/screenshots/maps.png" class="img-fluid"></div> -->
+                            <div><img src="https://dummyimage.com/800x455/002b36/ffffff.png&text=No+screenshot" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    Map
+                                    <small class="mx-1 badge badge-success" style="display: none;">
+                                        Active
+                                    </small>
+                                    <small class="mx-1 badge badge-secondary">
+                                        Coming Soon...
+                                    </small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    TruckersHub
+                                    <a href="https://truckershub.in/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0">
+                                    The map from the route advisor
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-secondary">
+                                    Disabled
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <!-- <div><img src="img/screenshots/test.png" class="img-fluid"></div> -->
+                            <div><img src="https://dummyimage.com/800x455/002b36/ffffff.png&text=No+screenshot" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    Base
+                                    <small class="mx-1 badge badge-success" style="display: none;">
+                                        Active
+                                    </small>
+                                    <small class="mx-1 badge badge-secondary">
+                                        Coming Soon...
+                                    </small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    TruckersHub
+                                    <a href="https://truckershub.in/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0"> Simple dashboard with speed </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-secondary">
+                                    Disabled
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-white mb-3" id="daf-xf-dash">
+                            <div>
+                                <img src="/img/screenshots/daf-xf.png" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    DAF XF
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    TruckersHub
+                                    <a href="https://truckershub.in/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0"> DAF XF Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-success" onclick="activate('daf-xf-dash')">
+                                    Activate
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/man-tgx.png" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Man TGX
+                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
+                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block"> Klauzzy <a target="_blank"
+                                        class="ml-1" style="display: none;"><i class="fas fa-globe-europe"></i></a><a
+                                        href="mailto:null" target="_blank" class="ml-1" style="display: none;"><i
+                                            class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> MAN TGX Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/mercedes-atego.png" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Mercedes
+                                    Benz Atego <small class="mx-1 badge badge-success"
+                                        style="display: none;">Active</small><small class="mx-1 badge badge-secondary"
+                                        style="display: none;">Disabled</small></h5><small
+                                    class="text-muted font-italic mb-2 d-inline-block"> Klauzzy <a target="_blank"
+                                        class="ml-1" style="display: none;"><i class="fas fa-globe-europe"></i></a><a
+                                        href="mailto:null" target="_blank" class="ml-1" style="display: none;"><i
+                                            class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> Mercedes Benz Atego MP4 Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/rd-info.png" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> RD-Info
+                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
+                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block"> Argiano <a target="_blank"
+                                        class="ml-1" style="display: none;"><i class="fas fa-globe-europe"></i></a><a
+                                        href="mailto:van_argiano@outlook.com" target="_blank" class="ml-1"><i
+                                            class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> RenaultDash-Info </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/scania.gif" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Scania
+                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
+                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block"> SMITH Emmanuel, Klauzzy <a
+                                        href="https://emmanuel-smith.me" target="_blank" class="ml-1"><i
+                                            class="fas fa-globe-europe"></i></a><a href="mailto:hey@emmanuel-smith.me"
+                                        target="_blank" class="ml-1"><i class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> Scania Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/scania-next-gen.gif" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Scania
+                                    Next Gen, Klauzzy <small class="mx-1 badge badge-success"
+                                        style="display: none;">Active</small><small class="mx-1 badge badge-secondary"
+                                        style="display: none;">Disabled</small></h5><small
+                                    class="text-muted font-italic mb-2 d-inline-block"> SMITH Emmanuel <a
+                                        href="https://emmanuel-smith.me" target="_blank" class="ml-1"><i
+                                            class="fas fa-globe-europe"></i></a><a href="mailto:hey@emmanuel-smith.me"
+                                        target="_blank" class="ml-1"><i class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> Scania Next Gen Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div>
+                        <div class="card text-white mb-3">
+                            <div><img src="img/screenshots/volvo-fh.png" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Volvo FH
+                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
+                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block"> Klauzzy <a target="_blank"
+                                        class="ml-1" style="display: none;"><i class="fas fa-globe-europe"></i></a><a
+                                        href="mailto:null" target="_blank" class="ml-1" style="display: none;"><i
+                                            class="fas fa-paper-plane"></i></a></small>
+                                <p class="card-text mb-0"> Volvo FH 2012 Dashboard </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center"><a
+                                    class="btn btn-sm btn-success">Activate</a></div>
+                        </div> -->
+                    </div>
+                    <div class="menu-tab-config tab-config tab-content h-100" style="display: none;">
+                        <div class="d-flex justify-content-center align-items-center pb-3">
+                            <!-- <div class="dropdown">
+                                <button id="downloadConfigDropdown" type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-sm btn-outline-ets mx-1 dropdown-toggle">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                                <div aria-labelledby="downloadConfigDropdown" class="dropdown-menu">
+                                    <a class="dropdown-item">App</a>
+                                    <a class="dropdown-item">Game</a>
+                                </div>
+                            </div>
+                            <span>
+                                <div class="dropdown">
+                                    <button id="uploadConfigDropdown" type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-sm btn-outline-ets mx-1 dropdown-toggle">
+                                        <i class="fas fa-upload"></i> Upload
+                                    </button>
+                                    <div aria-labelledby="uploadConfigDropdown" class="dropdown-menu">
+                                        <a class="dropdown-item">App</a>
+                                        <a class="dropdown-item">Game</a>
+                                    </div>
+                                </div>
+                            </span> -->
+                        </div>
+                        <section id="general" class="config-section">
+                            <h3 class="d-flex justify-content-between align-items-center p-2">
+                                <span>General</span>
+                                <span class="text-muted more">
+                                    <i class="fas fa-angle-double-right"></i> Show more
+                                </span>
+                            </h3>
+                            <div class="content" style="display: none;">
+                                <div class="fields mb-4">
+                                    <h4>General</h4>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Refresh rate
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set your refresh rate of the data. Less than rate are, more the dashboard
+                                                data will up to date. You need to restart this app after change;)
+                                            </small>
+                                        </div>
+                                        <div class="select d-flex justify-content-between align-items-stretch">
+                                            <select class="custom-select value w-100 m-0 py-1 px-2" id="general_refresh_rate">
+                                                <option value="100"> Quickly (100ms) </option>
+                                                <option value="500"> Balanced (500ms) </option>
+                                                <option value="1000"> Slowly (1000ms) </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Port
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Port used by the server
+                                            </small>
+                                        </div>
+                                        <div class="input d-flex justify-content-between align-items-stretch">
+                                            <div class="input-zone prefix">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <input type="number" class="form-control input-zone" id="general_port">
+                                            <button class="input-zone valid general_port">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Default skin loaded
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the skin loaded when this app was started
+                                            </small>
+                                        </div>
+                                        <div class="select d-flex justify-content-between align-items-stretch">
+                                            <select class="custom-select value w-100 m-0 py-1 px-2" id="general_skin_on_load">
+                                                <option value="default"> Default </option>
+                                                <option value="daf-xf-dash"> DAF XF </option>
+                                                <!-- <option value="Map"> Map </option>
+                                                <option value="Test"> Base </option>
+                                                <option value="ManTGX"> Man TGX </option>
+                                                <option value="MercedesAtego"> Mercedes Benz Atego </option>
+                                                <option value="RdInfo"> RD-Info </option>
+                                                <option value="Scania"> Scania </option>
+                                                <option value="ScaniaNextGen"> Scania Next Gen </option>
+                                                <option value="VolvoFH"> Volvo FH </option> -->
+                                            </select></div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Language
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Choose your locale used on this app
+                                            </small>
+                                        </div>
+                                        <div class="select d-flex justify-content-between align-items-stretch">
+                                            <select class="custom-select value w-100 m-0 py-1 px-2" id="general_skin_locale">
+                                                <option value="en-EN"> English </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Job delivery time
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Display the due date or the remaining time for a job
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch">
+                                            <div class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                <span class="py-1 px-2">Due date</span>
+                                            </div>
+                                            <!-- <div class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Remaining date</span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0"> H-Shifter layout </h5><small
+                                                class="font-italic text-muted">Show the current range of H-Shifter OR
+                                                the automatic number</small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">H-Shifter</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Automatic</span>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="fields mb-4 events">
+                                    <h4>Events</h4>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Game pause
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the game are on pause or unpause
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.pause">
+                                            <div class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Road fine
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when you get a road fine
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.fine">
+                                            <div class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Toll gate
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when you pass through a toll gate
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.tollgate">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Ferry travel
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when you use a ferry
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.ferry">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Train travel
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when you use a train
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.train">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Refuel payed
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when you have been refueled your truck tank
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_game.refuel-payed">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Job canceled
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when a job was canceled
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_job.cancelled">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Job delivered
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when a job was delivered
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_job.delivered">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Job finished
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when a job was finished
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_job.finished">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Job started
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when a job was started
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_job.started">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Speed limit
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the speed limit change
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_navigation.speed-limit">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Trailer coupled
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the trailer was coupled to the truck
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_trailers.coupling">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Trailer damage
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the damage increase on the trailer
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_trailers.damage">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Cruise control enabled
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the cruise control is enabled
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.cruise-control">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Cruise control increase
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the cruise control increase
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.cruise-control-increase">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Cruise control decrease
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the cruise control decrease
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.cruise-control-decrease">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck warning message
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up for all warning message of truck
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.warning">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck emergency message
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up for all emergency message of truck
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.emergency">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck electric message
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the truck contact was on
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.electric">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck engine start
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the truck engine start
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.engine">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck parking brake
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the truck parking brake are on
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.park">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck damage
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the truck damage increase
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.damage">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Truck refuel
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Show a pop-up when the truck refuel tank was full
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="events_truck.refuel">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">On</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                <span class="py-1 px-2">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields mb-4 units">
+                                    <h4>Unit</h4>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Weight
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the weight unit. Used for the weight of the cargo
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_weight">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="kg">
+                                                <span class="py-1 px-2">Kilogram</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="pound">
+                                                <span class="py-1 px-2">Pound &amp; Long ton</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Length
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the length unit. Used for the distance of travel
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_length">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="m">
+                                                <span class="py-1 px-2">Meters &amp; Kilometers</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="f">
+                                                <span class="py-1 px-2">Foot &amp; Miles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Degrees
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set degrees unit. Used for the temperature of water, oil and engine
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_degrees">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="C">
+                                                <span class="py-1 px-2">Celsius</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="F">
+                                                <span class="py-1 px-2">Fahrenheit</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Consumption
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the consumption unit
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_consumption">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="lpkm">
+                                                <span class="py-1 px-2">L/100 km</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="mpg">
+                                                <span class="py-1 px-2">Mpg</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Volume
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the volume unit. Used for the fuel capacity
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_volume">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="l">
+                                                <span class="py-1 px-2">Liters</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="g">
+                                                <span class="py-1 px-2">Gallons</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Pressure
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the pressure unit. Used for the Air pressure or oil pressure
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_pressure">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="psi">
+                                                <span class="py-1 px-2">PSI</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" is="bar">
+                                                <span class="py-1 px-2">Bar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Speed
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the speed unit
+                                            </small>
+                                        </div>
+                                        <div class="switch d-flex justify-content-between align-items-stretch" id="unit_speed">
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="kph">
+                                                <span class="py-1 px-2">Km/h</span>
+                                            </div>
+                                            <div
+                                                class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="mph">
+                                                <span class="py-1 px-2">Mph</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0">
+                                                Currency
+                                            </h5>
+                                            <small class="font-italic text-muted">
+                                                Set the currency unit
+                                            </small>
+                                        </div>
+                                        <div class="select d-flex justify-content-between align-items-stretch">
+                                            <select class="custom-select value w-100 m-0 py-1 px-2" id="unit_currency">
+                                                <option value="EUR"> € EUR </option>
+                                                <option value="GBP"> £ GBP </option>
+                                                <option value="USD"> $ US </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="map" class="config-section">
+                            <h3 class="d-flex justify-content-between align-items-center p-2">
+                                <span>
+                                    Map
+                                </span>
+                                <span class="text-muted more">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Show more
+                                </span>
+                            </h3>
+                            <div class="content" style="display: none;">
+                                <div>
+                                    <div class="fields mb-4 events">
+                                        <div class="mb-4">
+                                            <h4>General</h4>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        Debug information
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Display some debug information about the map
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_general_debug">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h4>Elements</h4>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        ETA information
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Display the remaining or ETA time and the current remaining distance to the destination
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_elements_eta">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        Speed and gear
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Display the current speed and gear
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_elements_speedAndGear">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        Map controls
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Display map controls (Recenter, focus on user, zoom in and zoom out)
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_elements_mapControls">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        Speed limit
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Display current speed limit
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_elements_speedLimit">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="m-0">
+                                                        Map rotation
+                                                    </h5>
+                                                    <small class="font-italic text-muted">
+                                                        Enable or disable the map rotation on the first load
+                                                    </small>
+                                                </div>
+                                                <div class="switch d-flex justify-content-between align-items-stretch" id="maps_elements_rotateWithPlayer">
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">On</span>
+                                                    </div>
+                                                    <div
+                                                        class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                        <span class="py-1 px-2">Off</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fields mb-4 units">
+                                        <h4>Tiles</h4>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0">
+                                                    Active map
+                                                </h5>
+                                                <small class="font-italic text-muted">
+                                                    Change the active map
+                                                </small>
+                                            </div>
+                                            <div class="select d-flex justify-content-between align-items-stretch">
+                                                <select class="custom-select value w-100 m-0 py-1 px-2" id="maps_map_activeMap">
+                                                    <option value=""> Auto </option>
+                                                    <option value="ets"> ETS2 base map (Full DLC) </option>
+                                                    <option value="ats"> ATS base map (Full DLC) </option>
+                                                    <option value="promod"> Promod (ETS) </option>
+                                                    <option value="promod-ca"> Promod Canada </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0">
+                                                    Kind of map
+                                                </h5>
+                                                <small class="font-italic text-muted">
+                                                    Use the ETS2 or ATS map automatically or use the modded map
+                                                </small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch" id="maps_map_type">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="vanilla">
+                                                    <span class="py-1 px-2">Vanilla</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center" id="mod">
+                                                    <span class="py-1 px-2">Mod</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0">
+                                                    Remote tiles location
+                                                </h5>
+                                                <small class="font-italic text-muted">
+                                                    Set a remote location for the map tiles.
+                                                </small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">Unicor-p/SCS_Map_Tiles</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">ets2.jagfx.fr (Deprecated)</span>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- <section id="InsanoDeath" class="config-section">
+                            <h3 class="d-flex justify-content-between align-items-center p-2"><span>JAGFx</span><span
+                                    class="text-muted more"><i class="fas fa-angle-double-right"></i> Show more </span>
+                            </h3>
+                            <div class="content" style="display: none;">
+                                <div>
+                                    <div class="fields mb-4">
+                                        <h4>Right</h4>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Oil temperature </h5><small
+                                                    class="font-italic text-muted">Display oil temperature</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Brakes temperature </h5><small
+                                                    class="font-italic text-muted">Display brakes temperature</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Brakes air pressure </h5><small
+                                                    class="font-italic text-muted">Display brakes air pressure</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Fuel </h5><small class="font-italic text-muted">Display
+                                                    the fuel level</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Fuel consumption </h5><small
+                                                    class="font-italic text-muted">Display the fuel average
+                                                    consumption</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Cruise control </h5><small
+                                                    class="font-italic text-muted">Display the current speed set with
+                                                    the cruise control ON</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Water temperature </h5><small
+                                                    class="font-italic text-muted">Display the water temperature</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Battery voltage </h5><small
+                                                    class="font-italic text-muted">Display the battery voltage</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Next rest stop </h5><small
+                                                    class="font-italic text-muted">Display the time to go to the next
+                                                    rest stop</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Display map </h5><small
+                                                    class="font-italic text-muted">Enable or disable the map
+                                                    view</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fields mb-4">
+                                        <h4>Middle - Top</h4>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Retarder </h5><small
+                                                    class="font-italic text-muted">Display the retarder
+                                                    indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Parking brake </h5><small
+                                                    class="font-italic text-muted">Display the parking brake
+                                                    indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Beam high </h5><small
+                                                    class="font-italic text-muted">Display the high beam
+                                                    indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Beam low </h5><small
+                                                    class="font-italic text-muted">Display the low beam
+                                                    indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Beacon </h5><small
+                                                    class="font-italic text-muted">Display the beacon indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fields mb-4">
+                                        <h4>Middle - Bottom</h4>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> RPM </h5><small class="font-italic text-muted">Display
+                                                    the RPM</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Fuel </h5><small class="font-italic text-muted">Display
+                                                    the fuel level indicator</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Speed limit </h5><small
+                                                    class="font-italic text-muted">Display the speed limit</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="m-0"> Turning indicator </h5><small
+                                                    class="font-italic text-muted">Display an indicator when the turn
+                                                    left or turn right blinker are ON</small>
+                                            </div>
+                                            <div class="switch d-flex justify-content-between align-items-stretch">
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center active">
+                                                    <span class="py-1 px-2">On</span>
+                                                </div>
+                                                <div
+                                                    class="value w-100 m-0 text-center d-flex justify-content-center align-items-center">
+                                                    <span class="py-1 px-2">Off</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section> -->
+                        <!-- <section id="scania" class="config-section">
+                            <h3 class="d-flex justify-content-between align-items-center p-2"><span>Scania</span><span
+                                    class="text-muted more"><i class="fas fa-angle-double-right"></i> Show more </span>
+                            </h3>
+                            <div class="content" style="display: none;">
+                                <div class="fields mb-4">
+                                    <h4>Scania</h4>
+                                    <div class="pl-3 p-2 field d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="m-0"> Default menu </h5><small class="font-italic text-muted">Set
+                                                the default menu for the Scania dashboard skin. It is displayed when you
+                                                use this dashboard.</small>
+                                        </div>
+                                        <div class="select d-flex justify-content-between align-items-stretch"><select
+                                                class="custom-select value w-100 m-0 py-1 px-2">
+                                                <option value=""> Nothing </option>
+                                                <option value="DrivingAssistance"> Cruise control, trip computer and
+                                                    driving time information </option>
+                                                <option value="InstantaneousData"> Instantaneous data </option>
+                                            </select></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section> -->
+                    </div>
+                    <div class="menu-tab-about tab-about tab-content h-100" style="display: none;">
+                        <!-- <aside class="author card"><img alt=""
+                                src="https://github.com/JAGFx/JAGFx/raw/master/banner-github-profile-readme.jpg"
+                                class="background"><img
+                                src="https://avatars3.githubusercontent.com/u/12508080?s=460&amp;u=f59ce1bde619fa0e6c226e92ab97945c4561eea5&amp;v=4"
+                                class="profile img-fluid">
+                            <div class="card-content">
+                                <h2><small class="m-0 mb-2 badge badge-success badge-author">Author</small><span
+                                        class="d-block">Emmanuel SMITH</span><small
+                                        class="font-italic">hey@emmanuel-smith.me</small></h2>
+                                <div class="icons"><a href="https://emmanuel-smith.me" target="_blank"><i
+                                            class="fas fa-globe-europe"></i></a><a href="https://twitter.com/d_jagfx"
+                                        target="_blank"><i class="fab fa-twitter"></i></a><a
+                                        href="https://github.com/JAGFx" target="_blank"><i
+                                            class="fab fa-github"></i></a></div>
+                            </div>
+                        </aside>
+                        <aside class="project p-0 h-100 card">
+                            <div class="card-content p-3">
+                                <h2><small class="m-0 mb-2 badge badge-danger badge-author">v1.7.3</small><span
+                                        class="d-block">Euro Truck Simulator 2 dashboard</span></h2>
+                            </div>
+                            <div class="card-footer w-100 icons m-0"><a
+                                    href="https://github.com/JAGFx/ets2-dashboard-skin/issues" target="_blank"
+                                    class="mx-1 text-danger"><i class="fas fa-bug"></i></a><a
+                                    href="https://github.com/JAGFx/ets2-dashboard-skin.git" target="_blank"
+                                    class="mx-1"><i class="fas fa-code-branch"></i></a><a
+                                    href="https://jagfx.github.io/ets2-dashboard-skin/" target="_blank" class="mx-1"><i
+                                        class="fas fa-book"></i></a><a
+                                    href="https://github.com/JAGFx/ets2-dashboard-skin/blob/master/LICENSE"
+                                    target="_blank" class="mx-1"><i class="fab fa-creative-commons"></i></a></div>
+                        </aside> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper" id="dashboard">
+            <div class="dashboard">
+                <!-- style="transform: scale(0.670898) translate(-50%, -50%);" -->
+                <div class="hasJob">
+                    <div data-type="meter" class="truck-speed" style="transform: rotate(-114deg);"></div>
+                    <div class="truck-speedRounded wrapper-area"><span>0</span></div>
+                    <div class="truck-speedRounded-unit wrapper-area"><span>km/h</span></div>
+                    <div data-type="meter" class="truck-engineRpm" style="transform: rotate(-96deg);"></div>
+                    <div data-type="meter" class="truck-fuel" style="transform: rotate(-95deg);"></div>
+                    <div data-type="meter" class="truck-waterTemperature" style="transform: rotate(-95deg);"></div>
+                    <div class="truck-odometer wrapper-area"><span>0</span></div>
+                    <div class="truck-cruiseControlSpeedRounded wrapper-area"><span>0</span></div>
+                    <div class="truck-gear wrapper-area"><span>N</span></div>
+                    <div class="truck-blinkerLeftOn"><i class="icon-blinker_left"></i></div>
+                    <div class="truck-blinkerRightOn"><i class="icon-blinker_right"></i></div>
+                    <div class="truck-cruiseControlOn"></div>
+                    <div class="truck-lightsBeamHighOn"></div>
+                    <div class="truck-lightsBeamLowOn"></div>
+                    <div class="truck-lightsParkingOn"></div>
+                    <div class="trailer-attached"></div>
+                    <div class="trailer-mass"></div>
+                    <div class="trailer-name"> </div>
+                    <div class="truck-parkBrakeOn"></div>
+                    <div class="truck-airPressureWarningOn"></div>
+                    <div class="game-time wrapper-area"><span></span></div>
+                    <table class="_job">
+                        <tr>
+                            <th>Time:</th>
+                            <td><span class="game-time"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Source:</th>
+                            <td>
+                                <span class="hasJob _jobSource">
+                                    <span class="job-sourceCity"> </span>
+                                    ( <span class="job-sourceCompany"> </span> )
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Destination:</th>
+                            <td>
+                                <span class="_jobDestionation">
+                                    <span class="job-destinationCity"> </span>
+                                    ( <span class="job-destinationCompany"> </span> )
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Deadline in:</th>
+                            <td>
+                                <span class="job-remainingTime"></span>
+                                <span class="_jobIncome">
+                                    (<span class="job-income"> 0 € </span>)
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="d-flex wears flex-column" id="damageDiv">
+                        <div class="info w-100 d-flex justify-content-around">
+                            <span>Truck wear:</span>
+                            <span class="wear">0%</span>
+                        </div>
+                        <div class="info w-100 d-flex justify-content-around">
+                            <span>Trailer damage:</span>
+                            <span class="trailer-wear wear">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="/js/main.js"></script>
+
+</html>
