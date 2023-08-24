@@ -72,7 +72,7 @@ more.forEach(item => {
 
 function activate(dash) {
     dashboard.classList.forEach(i => {
-        if(i != "wrapper") {
+        if (i != "wrapper") {
             dashboard.classList.remove(i);
         }
     })
@@ -107,7 +107,7 @@ function dashSelection() {
         }
     });
 
-    const dashboards = ["default", "daf-xf-dash"];
+    const dashboards = ["default", "base", "daf-xf-dash"];
     let currentDashboard = "default";
     dashboard.classList.forEach(i => {
         if (dashboards.includes(i)) {
@@ -437,3 +437,17 @@ function dashSelection() {
         }
     }, false)
 })();
+
+
+// FullScreen
+function toggleFullscreen(elem) {
+    if (elem.children[0].children[0].classList.contains("fa-expand")) {
+        elem.children[0].children[0].classList.toggle("fa-expand");
+        elem.children[0].children[0].classList.toggle("fa-compress");
+        document.documentElement.requestFullscreen();
+    } else {
+        elem.children[0].children[0].classList.toggle("fa-expand");
+        elem.children[0].children[0].classList.toggle("fa-compress");
+        document.exitFullscreen();
+    }
+}

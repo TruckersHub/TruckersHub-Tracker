@@ -34,14 +34,11 @@
                             </span>
                         </a>
                     </li>
-                    <!-- <li>
+                    <li onclick="toggleFullscreen(this)" style="cursor: pointer;">
                         <span>
                             <i class="fas fa-expand"></i>
                         </span>
-                        <span style="display: none;">
-                            <i class="fas fa-compress"></i>
-                        </span>
-                    </li> -->
+                    </li>
                 </ul>
             </nav>
             <div class="wrapper menu h-100" id="menu" style="display: none;">
@@ -111,17 +108,13 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="card text-white mb-3">
-                            <!-- <div><img src="img/screenshots/test.png" class="img-fluid"></div> -->
-                            <div><img src="https://dummyimage.com/800x455/002b36/ffffff.png&text=No+screenshot" class="img-fluid"></div>
+                        <div class="card text-white mb-3" id="base">
+                            <div><img src="img/screenshots/base.png" class="img-fluid"></div>
                             <div class="card-body">
                                 <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
                                     Base
                                     <small class="mx-1 badge badge-success" style="display: none;">
                                         Active
-                                    </small>
-                                    <small class="mx-1 badge badge-secondary">
-                                        Coming Soon...
                                     </small>
                                 </h5>
                                 <small class="text-muted font-italic mb-2 d-inline-block">
@@ -133,8 +126,8 @@
                                 <p class="card-text mb-0"> Simple dashboard with speed </p>
                             </div>
                             <div class="card-footer d-flex justify-content-center align-items-center">
-                                <a class="btn btn-sm btn-secondary">
-                                    Disabled
+                                <a class="btn btn-sm btn-success" onclick="activate('base')">
+                                    Activate
                                 </a>
                             </div>
                         </div>
@@ -157,6 +150,64 @@
                             <div class="card-footer d-flex justify-content-center align-items-center">
                                 <a class="btn btn-sm btn-success" onclick="activate('daf-xf-dash')">
                                     Activate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-white mb-3" id="volvo-fh-dash">
+                            <!-- <div><img src="img/screenshots/volvo.png" class="img-fluid"></div> -->
+                            <div><img src="https://dummyimage.com/800x455/002b36/ffffff.png&text=No+screenshot" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    Volvo FH
+                                    <small class="mx-1 badge badge-success" style="display: none;">
+                                        Active
+                                    </small>
+                                    <small class="mx-1 badge badge-secondary">
+                                        Coming Soon...
+                                    </small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    TruckersHub
+                                    <a href="https://truckershub.in/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0">
+                                    Volvo FH 2012 Dashboard
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-secondary">
+                                    Disabled
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card text-white mb-3" id="scania-dash">
+                            <!-- <div><img src="img/screenshots/scania.png" class="img-fluid"></div> -->
+                            <div><img src="https://dummyimage.com/800x455/002b36/ffffff.png&text=No+screenshot" class="img-fluid"></div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center">
+                                    Scania
+                                    <small class="mx-1 badge badge-success" style="display: none;">
+                                        Active
+                                    </small>
+                                    <small class="mx-1 badge badge-secondary">
+                                        Coming Soon...
+                                    </small>
+                                </h5>
+                                <small class="text-muted font-italic mb-2 d-inline-block">
+                                    TruckersHub
+                                    <a href="https://truckershub.in/" target="_blank" class="ml-1">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a>
+                                </small>
+                                <p class="card-text mb-0">
+                                    Scania Dashboard
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center align-items-center">
+                                <a class="btn btn-sm btn-secondary">
+                                    Disabled
                                 </a>
                             </div>
                         </div>
@@ -209,22 +260,6 @@
                                     class="btn btn-sm btn-success">Activate</a></div>
                         </div>
                         <div class="card text-white mb-3">
-                            <div><img src="img/screenshots/scania.gif" class="img-fluid"></div>
-                            <div class="card-body">
-                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Scania
-                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
-                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
-                                </h5>
-                                <small class="text-muted font-italic mb-2 d-inline-block"> SMITH Emmanuel, Klauzzy <a
-                                        href="https://emmanuel-smith.me" target="_blank" class="ml-1"><i
-                                            class="fas fa-globe-europe"></i></a><a href="mailto:hey@emmanuel-smith.me"
-                                        target="_blank" class="ml-1"><i class="fas fa-paper-plane"></i></a></small>
-                                <p class="card-text mb-0"> Scania Dashboard </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-center align-items-center"><a
-                                    class="btn btn-sm btn-success">Activate</a></div>
-                        </div>
-                        <div class="card text-white mb-3">
                             <div><img src="img/screenshots/scania-next-gen.gif" class="img-fluid"></div>
                             <div class="card-body">
                                 <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Scania
@@ -236,22 +271,6 @@
                                             class="fas fa-globe-europe"></i></a><a href="mailto:hey@emmanuel-smith.me"
                                         target="_blank" class="ml-1"><i class="fas fa-paper-plane"></i></a></small>
                                 <p class="card-text mb-0"> Scania Next Gen Dashboard </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-center align-items-center"><a
-                                    class="btn btn-sm btn-success">Activate</a></div>
-                        </div>
-                        <div class="card text-white mb-3">
-                            <div><img src="img/screenshots/volvo-fh.png" class="img-fluid"></div>
-                            <div class="card-body">
-                                <h5 class="card-title mb-0 d-flex justify-content-sm-start align-items-center"> Volvo FH
-                                    <small class="mx-1 badge badge-success" style="display: none;">Active</small><small
-                                        class="mx-1 badge badge-secondary" style="display: none;">Disabled</small>
-                                </h5>
-                                <small class="text-muted font-italic mb-2 d-inline-block"> Klauzzy <a target="_blank"
-                                        class="ml-1" style="display: none;"><i class="fas fa-globe-europe"></i></a><a
-                                        href="mailto:null" target="_blank" class="ml-1" style="display: none;"><i
-                                            class="fas fa-paper-plane"></i></a></small>
-                                <p class="card-text mb-0"> Volvo FH 2012 Dashboard </p>
                             </div>
                             <div class="card-footer d-flex justify-content-center align-items-center"><a
                                     class="btn btn-sm btn-success">Activate</a></div>
@@ -340,8 +359,8 @@
                                             <select class="custom-select value w-100 m-0 py-1 px-2" id="general_skin_on_load">
                                                 <option value="default"> Default </option>
                                                 <option value="daf-xf-dash"> DAF XF </option>
+                                                <option value="base"> Base </option>
                                                 <!-- <option value="Map"> Map </option>
-                                                <option value="Test"> Base </option>
                                                 <option value="ManTGX"> Man TGX </option>
                                                 <option value="MercedesAtego"> Mercedes Benz Atego </option>
                                                 <option value="RdInfo"> RD-Info </option>

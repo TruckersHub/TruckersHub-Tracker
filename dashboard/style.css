@@ -14509,6 +14509,12 @@ i[class^=icon] {
     border-radius: 20px;
 }
 
+/* Base Data */
+.wrapper .dashboard .hasJob>*,
+.wrapper .dashboard .hasJob .d-flex>* {
+    display: none;
+}
+
 /**
  * @author:	Emmanuel SMITH <hey@emmanuel-smith.me>
  * project:	ets2-dashboard-skin
@@ -17546,26 +17552,30 @@ i[class^=icon] {
  * Date: 	01/05/2020
  * Time: 	17:40
  */
-.test.wrapper {
+.base.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.test.wrapper .speed>* {
+.base.wrapper .dashboard {
+    width: auto !important;
+    transform: translate(0%, 0%) !important;
+}
+
+.base.wrapper .truck-speedRounded,
+.base.wrapper .truck-speedRounded-unit {
     display: block;
 }
 
-.test.wrapper .speed .value {
-    font-family: suprrpg !important;
+.base.wrapper .truck-speedRounded {
     font-size: 12rem;
     line-height: 10rem;
-    transform: skew(19deg, 0deg);
     margin: 0.7rem 0 0;
 }
 
-.test.wrapper .speed>.unit {
+.base.wrapper .truck-speedRounded-unit {
     font-size: 3rem;
 }
 
