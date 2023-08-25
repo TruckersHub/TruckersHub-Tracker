@@ -14509,12 +14509,6 @@ i[class^=icon] {
     border-radius: 20px;
 }
 
-/* Base Data */
-.wrapper .dashboard .hasJob>*,
-.wrapper .dashboard .hasJob .d-flex>* {
-    display: none;
-}
-
 /**
  * @author:	Emmanuel SMITH <hey@emmanuel-smith.me>
  * project:	ets2-dashboard-skin
@@ -17552,6 +17546,11 @@ i[class^=icon] {
  * Date: 	01/05/2020
  * Time: 	17:40
  */
+.base.wrapper .dashboard .hasJob>*,
+.base.wrapper .dashboard .hasJob .d-flex>* {
+    display: none;
+}
+
 .base.wrapper {
     display: flex;
     justify-content: center;
@@ -17566,7 +17565,7 @@ i[class^=icon] {
 
 .base.wrapper .truck-speedRounded,
 .base.wrapper .truck-speedRounded-unit {
-    display: block;
+    display: block !important;
 }
 
 .base.wrapper .truck-speedRounded {

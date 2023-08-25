@@ -292,7 +292,7 @@ function dashSelection() {
         data = JSON.parse(e.data);
 
         gameTime.forEach(t => {
-            t.innerHTML = new Date(data.game.time.unix).toLocaleString("en-GB", {
+            t.innerHTML = new Date(data?.game?.time?.unix || 0).toLocaleString("en-GB", {
                 timeZone: "Africa/Abidjan",
                 hour12: true,
                 weekday: "short",
