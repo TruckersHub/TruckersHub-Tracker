@@ -1,0 +1,103 @@
+{
+  "name": "truckershub-client",
+  "productName": "truckershub-client",
+  "version": "0.13.0",
+  "description": "TruckersHub Client to track jobs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "echo \"No linting configured\"",
+    "build": "electron-builder",
+    "publish": "electron-builder -p always",
+    "obfuscate": "node obfuscate.js",
+    "pack": "electron-packager ./ TruckersHub-Client"
+  },
+  "build": {
+    "appId": "company.truckershub.client",
+    "productName": "TruckersHub Client",
+    "copyright": "Copyright © 2023 TruckersHub",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "assets/truckershub.ico"
+    },
+    "dmg": {
+      "icon": "assets/truckershub.ico",
+      "title": "TruckersHub Client"
+    },
+    "nsis": {
+      "installerIcon": "assets/truckershub.ico",
+      "uninstallerIcon": "assets/truckershub.ico",
+      "uninstallDisplayName": "TruckersHub Client",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "InsanoDeath3",
+        "repo": "truckershub-client",
+        "private": false,
+        "releaseType": "release"
+      }
+    ]
+  },
+  "repository": "https://github.com/InsanoDeath3/truckershub-client",
+  "keywords": [],
+  "author": {
+    "name": "InsanoDeath",
+    "email": "77103802+InsanoDeath3@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "truckershub-client"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "croxydb": "^0.0.7",
+    "discord-rpc": "^4.0.1",
+    "ip": "^2.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "electron": "^28.1.0",
+    "javascript-obfuscator": "^4.1.0"
+  }
+}
