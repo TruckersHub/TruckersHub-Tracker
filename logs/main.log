@@ -1,90 +1,41 @@
-[2024-01-27 12-30-50-59] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-30-50-66] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-30-50-66] - INFO - Platform: win32
-[2024-01-27 12-30-50-66] - INFO - Version: 0.13.0
-[2024-01-27 12-30-50-66] - INFO - Title: TruckersHub Tracker
-[2024-01-27 12-30-50-66] - INFO - Checking for Updates...
-[2024-01-27 12-30-50-66] - INFO - Checking Game Path...
-[2024-01-27 12-30-50-71] - INFO - No Update Available
-[2024-01-27 12-30-50-71] - INFO - Auto Update Closed Down
-[2024-01-27 12-30-50-71] - INFO - The app is ready to function
-[2024-01-27 12-30-59-04] - INFO - ETS2 Path Found
-[2024-01-27 12-30-59-06] - INFO - ATS Path Found
-[2024-01-27 12-30-59-07] - INFO - Setting Path is finished
-[2024-01-27 12-30-59-10] - INFO - Data Caching Started
-[2024-01-27 12-30-59-80] - INFO - socket.open
-[2024-01-27 12-31-04-18] - INFO - Listening at http://192.168.0.104:34970
-[2024-01-27 12-31-12-25] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-31-39-68] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-31-39-73] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-31-39-73] - INFO - Version: 0.13.0
-[2024-01-27 12-31-39-73] - INFO - Platform: win32
-[2024-01-27 12-31-39-73] - INFO - Title: TruckersHub Tracker
-[2024-01-27 12-31-39-73] - INFO - Checking for Updates...
-[2024-01-27 12-31-39-73] - INFO - Checking Game Path...
-[2024-01-27 12-31-42-42] - INFO - Setting Path is finished
-[2024-01-27 12-31-42-79] - INFO - Data Caching Started
-[2024-01-27 12-31-44-16] - INFO - socket.open
-[2024-01-27 12-31-51-71] - INFO - Listening at http://192.168.0.104:34970
-[2024-01-27 12-49-10-77] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-49-10-85] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-49-10-85] - INFO - Platform: win32
-[2024-01-27 12-49-10-85] - INFO - Title: TruckersHub Tracker
-[2024-01-27 12-49-10-85] - INFO - Version: 0.13.0
-[2024-01-27 12-49-10-85] - INFO - Checking Game Path...
-[2024-01-27 12-49-10-85] - INFO - Checking for Updates...
-[2024-01-27 12-49-10-91] - INFO - No Update Available
-[2024-01-27 12-49-10-91] - INFO - The app is ready to function
-[2024-01-27 12-49-10-91] - INFO - Auto Update Closed Down
-[2024-01-27 12-49-25-85] - INFO - Setting Path is finished
-[2024-01-27 12-49-25-92] - INFO - Data Caching Started
-[2024-01-27 12-49-26-72] - INFO - socket.open
-[2024-01-27 12-49-30-99] - INFO - Listening at http://192.168.0.105:34970
-[2024-01-27 12-51-00-20] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-51-00-92] - INFO - Platform: win32
-[2024-01-27 12-51-00-92] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 12-51-00-92] - INFO - Version: 0.13.0
-[2024-01-27 12-51-00-92] - INFO - Title: TruckersHub Tracker
-[2024-01-27 12-51-00-92] - INFO - Checking for Updates...
-[2024-01-27 12-51-00-92] - INFO - Checking Game Path...
-[2024-01-27 12-51-03-59] - INFO - Setting Path is finished
-[2024-01-27 12-51-04-21] - INFO - Data Caching Started
-[2024-01-27 12-51-06-60] - INFO - socket.open
-[2024-01-27 12-51-19-58] - INFO - Listening at http://192.168.0.105:34970
-[2024-01-27 13-08-19-36] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 13-08-19-44] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 13-08-19-44] - INFO - Version: 0.13.1
-[2024-01-27 13-08-19-44] - INFO - Title: TruckersHub Tracker
-[2024-01-27 13-08-19-44] - INFO - Platform: win32
-[2024-01-27 13-08-19-44] - INFO - Checking for Updates...
-[2024-01-27 13-08-19-44] - INFO - Checking Game Path...
-[2024-01-27 13-08-19-75] - INFO - No Update Available
-[2024-01-27 13-08-19-75] - INFO - The app is ready to function
-[2024-01-27 13-08-19-75] - INFO - Auto Update Closed Down
-[2024-01-27 13-08-27-56] - INFO - Setting Path is finished
-[2024-01-27 13-08-27-62] - INFO - Data Caching Started
-[2024-01-27 13-08-28-28] - INFO - socket.open
-[2024-01-27 13-08-32-70] - INFO - Listening at http://192.168.0.105:34970
-[2024-01-27 13-09-00-58] - INFO - Clearing Heartbeat Interval
-[2024-01-27 13-09-00-58] - ERROR - Socket Closed:- 1006
-[2024-01-27 13-09-00-58] - ERROR - undefined
-[2024-01-27 13-09-06-17] - INFO - socket.open
-[2024-01-27 13-09-47-25] - INFO - TruckersHub Tracker Starting...
-[2024-01-27 13-09-49-84] - INFO - TruckersHub Client Connected to Game
-[2024-01-27 13-09-49-84] - INFO - Game detected: ETS2
-[2024-01-27 13-09-49-84] - INFO - Using Discord Application ID 1057933952410714152
-[2024-01-27 13-09-49-84] - INFO - Tracker Made by InsanoDeath
-[2024-01-27 13-09-49-84] - INFO - Starting Location Checker interval
-[2024-01-27 13-09-50-23] - INFO - Discord RPC ready
-[2024-01-27 13-10-41-45] - INFO - game.unpaused
-[2024-01-27 13-10-53-58] - INFO - game.paused
-[2024-01-27 13-11-17-88] - INFO - game.unpaused
-[2024-01-27 13-11-19-90] - INFO - game.paused
-[2024-01-27 13-11-49-86] - INFO - Checking location
-[2024-01-27 13-12-15-49] - INFO - game.unpaused
-[2024-01-27 13-12-30-66] - INFO - game.paused
-[2024-01-27 13-12-32-67] - INFO - TruckersHub Client Disconnected from Game
-[2024-01-27 13-12-32-67] - INFO - Location Checker interval reset
-[2024-01-27 13-12-32-67] - INFO - Discord RPC Client destroyed
-[2024-01-27 13-12-32-75] - INFO - Client Started
-[2024-01-27 13-12-32-75] - INFO - Shutting Client
+[2024-01-29 18-22-43-18] - INFO - TruckersHub Tracker Starting...
+[2024-01-29 18-22-43-25] - INFO - TruckersHub Tracker Starting...
+[2024-01-29 18-22-43-25] - INFO - Platform: win32
+[2024-01-29 18-22-43-25] - INFO - Version: 0.13.2
+[2024-01-29 18-22-43-25] - INFO - Title: TruckersHub Tracker
+[2024-01-29 18-22-43-26] - INFO - Checking for Updates...
+[2024-01-29 18-22-43-26] - INFO - Checking Game Path...
+[2024-01-29 18-22-43-61] - INFO - No Update Available
+[2024-01-29 18-22-43-61] - INFO - Auto Update Closed Down
+[2024-01-29 18-22-43-61] - INFO - The app is ready to function
+[2024-01-29 18-22-44-14] - INFO - Setting Path is finished
+[2024-01-29 18-22-44-18] - INFO - Data Caching Started
+[2024-01-29 18-22-44-61] - INFO - TruckersHub Client Connected to Game
+[2024-01-29 18-22-44-61] - INFO - Game detected: ETS2
+[2024-01-29 18-22-44-61] - INFO - Using Discord Application ID 1057933952410714152
+[2024-01-29 18-22-44-61] - INFO - Tracker Made by InsanoDeath
+[2024-01-29 18-22-44-99] - INFO - Discord RPC ready
+[2024-01-29 18-22-45-28] - INFO - socket.open
+[2024-01-29 18-22-45-62] - INFO - Multiplayer detected
+[2024-01-29 18-22-45-62] - INFO - Starting MP Checker interval
+[2024-01-29 18-22-46-64] - INFO - Multiplayer detected
+[2024-01-29 18-22-46-64] - INFO - Checking online status
+[2024-01-29 18-22-47-64] - INFO - Multiplayer detected
+[2024-01-29 18-22-47-64] - INFO - Checking online status
+[2024-01-29 18-22-48-65] - INFO - Checking online status
+[2024-01-29 18-22-48-65] - INFO - Multiplayer detected
+[2024-01-29 18-22-49-31] - INFO - Listening at http://192.168.0.105:34970
+[2024-01-29 18-36-34-25] - INFO - TruckersHub Tracker Starting...
+[2024-01-29 18-36-34-33] - INFO - TruckersHub Tracker Starting...
+[2024-01-29 18-36-34-33] - INFO - Platform: win32
+[2024-01-29 18-36-34-33] - INFO - Version: 0.13.2
+[2024-01-29 18-36-34-33] - INFO - Title: TruckersHub Tracker
+[2024-01-29 18-36-34-33] - INFO - Checking for Updates...
+[2024-01-29 18-36-34-33] - INFO - Checking Game Path...
+[2024-01-29 18-36-34-69] - INFO - Auto Update Closed Down
+[2024-01-29 18-36-34-69] - INFO - The app is ready to function
+[2024-01-29 18-36-34-69] - INFO - No Update Available
+[2024-01-29 18-36-35-08] - INFO - Setting Path is finished
+[2024-01-29 18-36-35-12] - INFO - Data Caching Started
+[2024-01-29 18-36-36-27] - INFO - socket.open
+[2024-01-29 18-36-40-26] - INFO - Listening at http://192.168.0.105:34970
