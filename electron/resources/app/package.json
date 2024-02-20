@@ -1,7 +1,7 @@
 {
   "name": "truckershub-client",
   "productName": "truckershub-client",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "TruckersHub Client to track jobs",
   "main": "src/index.js",
   "scripts": {
