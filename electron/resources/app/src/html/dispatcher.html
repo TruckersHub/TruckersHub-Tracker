@@ -254,7 +254,7 @@
                                                 <div class="col-md-6 text-start">
                                                     <label for="srcCompany" class="form-label">Source Company</label>
                                                     <select class="form-control" id="srcCompany" placeholder="Select..."
-                                                        autocomplete="off">
+                                                        autocomplete="off" onchange="plannedDistanceCheck()">
                                                         <option disabled selected value>Select...</option>
                                                     </select>
                                                     <div class="form-check form-switch form-check-inline">
@@ -271,10 +271,11 @@
                                                     <label for="destCompany" class="form-label">Destination
                                                         Company</label>
                                                     <select class="form-control" id="destCompany"
-                                                        placeholder="Select..." autocomplete="off">
+                                                        placeholder="Select..." autocomplete="off" onchange="plannedDistanceCheck()">
                                                         <option disabled selected value>Select...</option>
                                                     </select>
                                                 </div>
+                                                <p>Planned Distance: <span id="plannedDistance">0</span> km</p>
                                             </div>
                                             <div class="row mb-5">
                                                 <div class="col-md-6 text-start">
@@ -309,6 +310,13 @@
                                                         <option value="medium">Medium</option>
                                                         <option value="hard">Hard</option>
                                                     </select>
+                                                    <div class="form-check form-switch form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" role="switch"
+                                                            id="autoload">
+                                                        <label class="form-check-label" for="autoload">
+                                                            Auto Load Cargo
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-5">
@@ -531,6 +539,8 @@
         const destCompany = document.getElementById("destCompany");
         const company = document.getElementById("company");
 
+        const plannedDistance = document.getElementById("plannedDistance");
+
         // Cargo
         const cargo = document.getElementById("cargo");
         const trailerDef = document.getElementById("trailerDef");
@@ -538,6 +548,7 @@
         const urgency = document.getElementById("urgency");
         const allCargo = document.getElementById("allCargo");
         const teleport = document.getElementById("teleport");
+        const autoload = document.getElementById("autoload");
 
         //
         const positionCode = document.getElementById("positionCode");
