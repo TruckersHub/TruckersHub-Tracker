@@ -80,6 +80,12 @@
                     </a>
                 </li> -->
                 <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="trucks.html">
+                        <i class="fa-solid fa-truck-front me-3"></i>
+                        <span class="sidebar-link-title">Assigned Trucks</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
                     <a class="sidebar-link text-muted" href="simulation.html">
                         <i class="fa-solid fa-truck me-3"></i>
                         <span class="sidebar-link-title">Simulation</span>
@@ -148,6 +154,9 @@
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
+                                    <button class="btn btn-primary" type="button" onclick="loadQuickAccessData()">
+                                        Load Quick Access Profile
+                                    </button>
                                     <div class="row">
                                         <div class="col-md-6 text-start" id="gameDiv">
                                             <label for="game" class="form-label">Game</label>
@@ -171,6 +180,9 @@
                                             <select class="form-control" id="saves" onchange="decryptSave(this.value)">
                                                 <option disabled selected value>Select Profile</option>
                                             </select>
+                                            <button class="btn btn-primary" type="button" id="saveQuickAccess" style="display: none;" onclick="saveQuickAccessData()">
+                                                Save Profile to Quick Access
+                                            </button>
                                         </div>
                                         <div class="col-md-6 text-start" id="importDiv" style="display: none;">
                                             <label for="import" class="form-label">Import Code</label>
@@ -403,13 +415,23 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="row mb-3">
-                                                <div class="col-md-6 text-start">
+                                                <div class="col-12 text-start">
                                                     <label for="position" class="form-label">Current Position</label>
                                                     <br>
-                                                    <button class="btn btn-primary" type="button" id="position"
-                                                        onclick="currPosition()">
-                                                        Share Current Game Position
-                                                    </button>
+                                                    <div class="d-flex">
+                                                        <button class="btn btn-primary me-3" type="button" id="position"
+                                                            onclick="currPosition('position')">
+                                                            Share Current Truck & Trailer Position
+                                                        </button>
+                                                        <button class="btn btn-primary me-3" type="button" id="truckPosition"
+                                                            onclick="currPosition('truckPosition')">
+                                                            Share Current Truck Position
+                                                        </button>
+                                                        <button class="btn btn-primary me-3" type="button" id="trailerPosition"
+                                                            onclick="currPosition('trailerPosition')">
+                                                            Share Current Trailer Position
+                                                        </button>
+                                                    </div>
                                                     <p style="display: none;">Unique ID: <span id="positionCode"></span>
                                                     </p>
                                                 </div>
@@ -558,7 +580,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start fw-bold">
-                            <p class="mb-2 mb-md-0 fw-bold">TruckersHub &copy; 2023</p>
+                            <p class="mb-2 mb-md-0 fw-bold">TruckersHub &copy; 2023-2024</p>
                         </div>
                         <div class="col-md-6 text-center text-md-end text-gray-400">
                             <p class="mb-0" id="version">Version V</p>
@@ -637,6 +659,7 @@
         // const waypointsCode = document.getElementById("waypointsCode");
         const configCode = document.getElementById("configCode");
         const configTrailerCode = document.getElementById("configTrailerCode");
+        const saveQuickAccess = document.getElementById("saveQuickAccess");
 
         // Tom Select Functions
         const tomselects = {};

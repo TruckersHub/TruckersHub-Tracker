@@ -1,7 +1,7 @@
 {
   "name": "truckershub-client",
   "productName": "truckershub-client",
-  "version": "0.15.2",
+  "version": "1.0.0",
   "description": "TruckersHub Client to track jobs",
   "main": "src/index.js",
   "scripts": {
@@ -89,6 +89,8 @@
   "dependencies": {
     "croxydb": "^0.0.7",
     "discord-rpc": "^4.0.1",
+    "electron-overlay-window": "^3.3.0",
+    "eventsource": "^2.0.2",
     "ip": "^2.0.0"
   },
   "devDependencies": {
