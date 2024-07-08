@@ -1,7 +1,7 @@
 {
   "name": "truckershub-client",
   "productName": "truckershub-client",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "TruckersHub Client to track jobs",
   "main": "src/index.js",
   "scripts": {
@@ -61,7 +61,9 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "assets/truckershub.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
