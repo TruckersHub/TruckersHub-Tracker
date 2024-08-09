@@ -121,6 +121,12 @@
                         <span class="sidebar-link-title">Settings</span>
                     </a>
                 </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="javascript:restart()">
+                        <i class="fa-solid fa-power-off me-3"></i>
+                        <span class="sidebar-link-title">Restart</span>
+                    </a>
+                </li>
             </ul>
             <!-- <h6 class="sidebar-heading">Main</h6> -->
             <!-- <ul class="list-unstyled">
@@ -370,6 +376,11 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            
+                                            <p style="display: none;">
+                                                Shared Truck Unique ID: 
+                                                <span id="jobCode"></span>
+                                            </p>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-primary" type="button" onclick="addDelivery()">
@@ -661,6 +672,7 @@
         const trailer = document.getElementById("trailer");
 
         //
+        const jobCode = document.getElementById("jobCode");
         const positionCode = document.getElementById("positionCode");
         // const waypointsCode = document.getElementById("waypointsCode");
         const configCode = document.getElementById("configCode");
