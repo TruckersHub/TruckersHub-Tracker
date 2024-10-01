@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>TruckersHub Client</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/truckershub.png">
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+        
+    <link rel="stylesheet" href="fontawesome/all.min.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <div class="draggable">
+            <h3>TruckersHub Client</h3>
+        </div>
+
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="images/truckershub.png" alt="">
+                <!-- <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt=""> -->
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Dashboard
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right" id="menubar"></ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="deznav">
+            <div class="deznav-scroll" id="sidebar"></div>
+        </div>
+
+        <div class="content-body default-height">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card avtivity-card">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <span class="activity-icon bgl-success me-md-4 me-3 d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-ranking-star" style="font-size: xx-large;"></i>
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="fs-14 mb-2">TH Points</p>
+                                                <span class="title text-black font-w600" id="THP">0 THP</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height:5px;">
+                                            <div class="progress-bar bg-success" style="width: 42%; height:5px;"
+                                                role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="effect bg-success"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card avtivity-card">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <span class="activity-icon bgl-secondary me-md-4 me-3 d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-money-bill" style="font-size: xx-large;"></i>
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="fs-14 mb-2">Balance</p>
+                                                <span class="title text-black font-w600" id="balance">₹0</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height:5px;">
+                                            <div class="progress-bar bg-secondary" style="width: 82%; height:5px;"
+                                                role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="effect bg-secondary"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card avtivity-card">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <span class="activity-icon bgl-danger me-md-4 me-3 d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-route" style="font-size: xx-large;"></i>
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="fs-14 mb-2">Distance Driven</p>
+                                                <span class="title text-black font-w600" id="distance">0 Km</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height:5px;">
+                                            <div class="progress-bar bg-danger" style="width: 90%; height:5px;"
+                                                role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="effect bg-danger"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card avtivity-card">
+                                    <div class="card-body">
+                                        <div class="media align-items-center">
+                                            <span class="activity-icon bgl-warning me-md-4 me-3 d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-star" style="font-size: xx-large;"></i>
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="fs-14 mb-2">Rating</p>
+                                                <span class="title text-black font-w600" id="rating">0 <i class="fa-solid fa-star"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height:5px;">
+                                            <div class="progress-bar bg-warning" style="width: 42%; height:5px;"
+                                                role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="effect bg-warning"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-body text-center" id="usersDiv"></div>
+                            <div class="card-footer">
+                                <div class="simple-tab">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="overview" data-bs-toggle="tab"
+                                                data-bs-target="#overview-pane" type="button" role="tab"
+                                                aria-controls="overview-pane" aria-selected="true">
+                                                Overview
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link position-relative" id="skills-tab"
+                                                data-bs-toggle="tab" data-bs-target="#skills-tab-pane" type="button"
+                                                role="tab" aria-controls="skills-tab-pane" aria-selected="false">
+                                                Skills
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="awards" data-bs-toggle="tab"
+                                                data-bs-target="#awards-pane" type="button" role="tab"
+                                                aria-controls="awards-pane" aria-selected="false">
+                                                Awards
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="jobss" data-bs-toggle="tab"
+                                                data-bs-target="#jobss-pane" type="button" role="tab"
+                                                aria-controls="jobss-pane" aria-selected="false">
+                                                Jobs
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <!-- Overview -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="overview-pane" role="tabpanel"
+                                aria-labelledby="overview" tabindex="0">
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <div class="card-title m-0">
+                                            <h3 class="fw-bold m-0">Profile Details</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body p-9" id="textData">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skills Tab -->
+                            <div class="tab-pane fade" id="skills-tab-pane" role="tabpanel"
+                                aria-labelledby="skills-tab" tabindex="0">
+                                <div class="col-12 mb-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Skills
+                                        </div>
+                                        <div class="card-body" id="skillData">
+                                            <div class="row justify-content-center">
+                                                <!-- ADR -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/adr.png"
+                                                        alt="ADR Skills">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">ADR Cargo</h4>
+                                                        <p class="media-text">
+                                                            Get trained to Drive Dangerous goods and gain
+                                                            extra points and income.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="adr-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 1 - Explosives">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_1.png"
+                                                                alt="ADR Skill 1">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="adr-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 2 - Gases">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_2.png"
+                                                                alt="ADR Skill 2">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="adr-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 3 - Flammable liquids">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_3.png"
+                                                                alt="ADR Skill 3">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="adr-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 4 - Flammable solids">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_4.png"
+                                                                alt="ADR Skill 4">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="adr-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 6 - Toxic and infectious substances">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_6.png"
+                                                                alt="ADR Skill 6">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="adr-8"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="Class 8 - Corrosive substances">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/adr_8.png"
+                                                                alt="ADR Skill 8">
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Distance -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/distance.png"
+                                                        alt="ADR Skills">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">Long Distance Bonus</h4>
+                                                        <p class="media-text">
+                                                            Upgrading this skill help you gain bonus based
+                                                            on Distance.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="distance-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="5% Bonus up to 500 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="distance-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="10% Bonus up to 1000 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="distance-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="15% Bonus up to 1500 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="distance-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="20% Bonus up to 2000 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="distance-5"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="30% Bonus up to 3000 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="distance-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="50% Bonus up to 5000 km">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Valuable -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/valuable.png"
+                                                        alt="ADR Skills">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">High Value Cargo</h4>
+                                                        <p class="media-text">
+                                                            Upgrading this skill help you gain bonus based
+                                                            on Valuable Cargo.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="valuable-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="5% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="valuable-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="10% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="valuable-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="15% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="valuable-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="20% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="valuable-5"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="25% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="valuable-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="30% Bonus on Valuable Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Fragile -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/fragile.png"
+                                                        alt="ADR Skills">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">Fragile Cargo Bonus</h4>
+                                                        <p class="media-text">
+                                                            Upgrading this skill help you gain bonus based
+                                                            on Cargo Fragility.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="fragile-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="5% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="fragile-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="10% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="fragile-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="15% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="fragile-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="20% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="fragile-5"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="25% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="fragile-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="30% Bonus on Fragile Cargo">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Overweight -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/overweight.png"
+                                                        alt="ADR Skills">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">Overweight Cargo Bonus
+                                                        </h4>
+                                                        <p class="media-text">
+                                                            Upgrading this skill help you gain bonus based
+                                                            on Overweight Cargo.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="overweight-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="5% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="overweight-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="10% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="overweight-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="15% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="overweight-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="20% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="overweight-5"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="25% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="overweight-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="30% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Cost -->
+                                                <div
+                                                    class="d-flex border border-primary rounded mb-3 p-3 justify-content-between align-items-center">
+                                                    <img class="rounded"
+                                                        src="https://truckershub.in/images/skills/cost.png">
+                                                    <div class="media-body me-3">
+                                                        <h4 class="media-heading">Cost per km</h4>
+                                                        <p class="media-text">
+                                                            Upgrading this skill help you gain extra points
+                                                            & income per km.
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button onclick="skill(this.id)" id="cost-1"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="5% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="cost-2"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="10% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="cost-3"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="15% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="cost-4"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="20% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="cost-5"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="25% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                        <button onclick="skill(this.id)" id="cost-6"
+                                                            class="btn btn-outline-primary btn-icon mb-2 me-4 skills bs-tooltip"
+                                                            title="30% Bonus">
+                                                            <img class="avatar-img"
+                                                                src="https://truckershub.in/images/skills/empty.png">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Awards Tab -->
+                            <div class="tab-pane fade" id="awards-pane" role="tabpanel" aria-labelledby="awards"
+                                tabindex="0">
+                                <!-- Global Awards -->
+                                <div class="card mb-5">
+                                    <div class="card-header">
+                                        Global Awards
+                                    </div>
+                                    <div class="card-body" id="awardsData"></div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Jobs -->
+                            <div class="tab-pane fade" id="jobss-pane" role="tabpanel" aria-labelledby="jobss"
+                                tabindex="0">
+                                <!-- Jobs -->
+                                <div class="col-12 mb-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Monthly Jobs
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row justify-content-center">
+                                                <div class="statbox widget box box-shadow">
+                                                    <div class="widget-content widget-content-area">
+                                                        <table
+                                                            class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                                            <thead>
+                                                                <tr class="fw-bold text-muted">
+                                                                    <th>
+                                                                        Game
+                                                                    </th>
+                                                                    <th>
+                                                                        From
+                                                                    </th>
+                                                                    <th>
+                                                                        To
+                                                                    </th>
+                                                                    <th>
+                                                                        Cargo
+                                                                    </th>
+                                                                    <th>
+                                                                        Distance
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="jobsData"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    Copyright © TruckersHub 2023-24
+                </p>
+                <p id="version">
+                    Version V
+                </p>
+            </div>
+        </footer>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            dezSettingsOptions.version = 'dark';
+            new dezSettings(dezSettingsOptions);
+            jQuery(window).on('resize', function () {
+                dezSettingsOptions.version = 'dark';
+                new dezSettings(dezSettingsOptions);
+                jQuery('.dz-theme-mode').addClass('active');
+            });
+        });
+    </script>
+
+    <script src="mainjs/common.js"></script>
+    <script src="mainjs/dashboard.js"></script>
+</body>
+
+</html>

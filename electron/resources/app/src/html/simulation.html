@@ -1,278 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>TruckersHub Job Simulation</title>
+    <!-- Title -->
+    <title>TruckersHub Client</title>
 
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
 
-    <!-- Google fonts - Popppins for copy-->
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap"
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/truckershub.png">
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <!-- Prism Syntax Highlighting-->
-    <link rel="stylesheet" href="vendor/prismjs/plugins/toolbar/prism-toolbar.css">
-    <link rel="stylesheet" href="vendor/prismjs/themes/prism-okaidia.css">
-    <!-- The Main Theme stylesheet (Contains also Bootstrap CSS)-->
-    <link rel="stylesheet" href="css/style.default.63c85ff9.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.0a822280.css">
-    <link rel="stylesheet" href="https://truckershub.in/plugins/src/sweetalerts2/sweetalerts2.css">
-    <link rel="stylesheet" href="tomselect/tom-select.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="images/truckershub.png">
-    <script src="https://kit.fontawesome.com/c22d112cf6.js" crossorigin="anonymous"></script>
-
-    <link href="icons/icons.css" rel="stylesheet">
-
-    <style>
-        .spinner-wrapper {
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.8;
-        }
-    </style>
+        
+    <link rel="stylesheet" href="fontawesome/all.min.css">
 </head>
 
 <body>
-    <div class="spinner-wrapper">
-        <div class="sk-wandering-cubes">
-            <div class="sk-cube sk-cube1"></div>
-            <div class="sk-cube sk-cube2"></div>
+
+    <div id="preloader" class="spinner-wrapper">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
 
-    <div class="draggable">
-        <h3>TruckersHub Simulation</h3>
-    </div>
-    <div class="d-flex align-items-stretch">
-        <!-- SideBar -->
-        <div class="sidebar py-3" id="sidebar">
-            <ul class="list-unstyled">
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="index.html">
-                        <i class="fa-solid fa-house me-3"></i>
-                        <span class="sidebar-link-title">Home</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="summary.html">
-                        <i class="fa-solid fa-list me-3"></i>
-                        <span class="sidebar-link-title">Summary</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:speedometer()">
-                        <i class="fa-solid fa-gauge me-3"></i>
-                        <span class="sidebar-link-title">Speedometer</span>
-                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:liveMap()">
-                        <i class="fa-solid fa-map me-3"></i>
-                        <span class="sidebar-link-title">Live Map</span>
-                    </a>
-                </li>
-                <!-- <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:helper()">
-                        <i class="fa-solid fa-desktop me-3"></i>
-                        <span class="sidebar-link-title">TruckersHub Helper</span>
-                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                    </a>
-                </li> -->
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="trucks.html">
-                        <i class="fa-solid fa-truck-front me-3"></i>
-                        <span class="sidebar-link-title">Assigned Trucks</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted active" href="simulation.html">
-                        <i class="fa-solid fa-truck me-3"></i>
-                        <span class="sidebar-link-title">Simulation</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="market.html">
-                        <i class="fa-solid fa-truck me-3"></i>
-                        <span class="sidebar-link-title">Cargo Market</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="dispatcher.html">
-                        <i class="fa-solid fa-file-pen me-3"></i>
-                        <span class="sidebar-link-title">Job Dispatcher</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:sponsor()">
-                        <i class="fa-solid fa-dollar me-3"></i>
-                        <span class="sidebar-link-title">Sponsor</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="settings.html">
-                        <i class="fa-solid fa-gear me-3"></i>
-                        <span class="sidebar-link-title">Settings</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:restart()">
-                        <i class="fa-solid fa-power-off me-3"></i>
-                        <span class="sidebar-link-title">Restart</span>
-                    </a>
-                </li>
-            </ul>
-            <!-- <h6 class="sidebar-heading">Main</h6> -->
-            <!-- <ul class="list-unstyled">
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted " href="#" data-bs-target="#dashboardsDropdown"
-                        role="button" aria-expanded="false" data-bs-toggle="collapse">
-                        <svg class="svg-icon svg-icon-md me-3">
-                            <use
-                                xlink:href="https://demo.bootstrapious.com/bubbly/1-3-2/icons/orion-svg-sprite.71e9f5f2.svg#real-estate-1">
-                            </use>
-                        </svg><span class="sidebar-link-title">Dashboards </span></a>
-                    <ul class="sidebar-menu list-unstyled collapse " id="dashboardsDropdown">
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index.html">Default</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-cms.html">CMS</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted"
-                                href="index-e-commerce.html">E-commerce</a></li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-projects.html">Projects</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-charts.html">Charts</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul> -->
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <div class="draggable">
+            <h3>TruckersHub Client</h3>
         </div>
 
-        <div class="page-holder bg-gray-100">
-            <div class="container-fluid px-lg-4 px-xl-5">
-                <section>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-profile mb-4">
-                                <div class="card-header">
-                                    <span>Job Simulation Picker</span>
-                                </div>
-                                <div class="card-body text-center">
-                                    <div class="row">
-                                        <div class="col-md-6 text-start" id="gameDiv">
-                                            <label for="game" class="form-label">Game</label>
-                                            <select class="form-control" id="game" onchange="decryptGame(this.value)">
-                                                <option disabled selected value>Select Game</option>
-                                                <option value="ets2">Euro Truck Simulator 2</option>
-                                                <option value="ats">American Truck Simulator</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 text-start" id="profileDiv" style="display: none;">
-                                            <label for="profiles" class="form-label">Profiles</label>
-                                            <select class="form-control" id="profiles"
-                                                onchange="decryptProfile(this.value)">
-                                                <option disabled selected value>Select Profile</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 text-start" id="savesDiv" style="display: none;">
-                                            <label for="saves" class="form-label">Game Saves</label>
-                                            <select class="form-control" id="saves" onchange="decryptSave(this.value)">
-                                                <option disabled selected value>Select Profile</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="images/truckershub.png" alt="">
+                <!-- <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt=""> -->
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                TruckersHub Simulation
                             </div>
                         </div>
-                        <div class="col-12">
-                            <!-- VTC Jobs Tab -->
-                            <div class="card" id="simjobs" style="display: none;">
-                                <div class="card-header d-flex justify-content-between"
-                                    style="z-index: 0 !important;">
-                                    <div class="card-title m-0">
-                                        <h3 class="fw-bold m-0">VTC Jobs</h3>
+                        <ul class="navbar-nav header-right" id="menubar"></ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="deznav">
+            <div class="deznav-scroll" id="sidebar"></div>
+        </div>
+
+        <div class="content-body default-height">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-profile mb-4">
+                            <div class="card-header">
+                                <span>Job Simulation Picker</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="row">
+                                    <div class="col-md-6 text-start" id="gameDiv">
+                                        <label for="game" class="form-label">Game</label>
+                                        <select class="form-control" id="game" onchange="decryptGame(this.value)">
+                                            <option disabled selected value>Select Game</option>
+                                            <option value="ets2">Euro Truck Simulator 2</option>
+                                            <option value="ats">American Truck Simulator</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 text-start" id="profileDiv" style="display: none;">
+                                        <label for="profiles" class="form-label">Profiles</label>
+                                        <select class="form-control" id="profiles"
+                                            onchange="decryptProfile(this.value)">
+                                            <option disabled selected value>Select Profile</option>
+                                        </select>
                                     </div>
                                 </div>
-
-                                <div class="card-body p-9">
-                                    <table class="table card-text">
-                                        <thead>
-                                            <tr>
-                                                <th>Source</th>
-                                                <th>Destination</th>
-                                                <th>Cargo</th>
-                                                <th>Planned Distance</th>
-                                                <th>Game</th>
-                                                <th>Status</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="simJobsData"></tbody>
-                                    </table>
+                                <div class="row">
+                                    <div class="col-md-6 text-start" id="savesDiv" style="display: none;">
+                                        <label for="saves" class="form-label">Game Saves</label>
+                                        <select class="form-control" id="saves" onchange="decryptSave(this.value)">
+                                            <option disabled selected value>Select Profile</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start fw-bold">
-                            <p class="mb-2 mb-md-0 fw-bold">TruckersHub &copy; 2023-2024</p>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end text-gray-400">
-                            <p class="mb-0" id="version">Version V</p>
+                    <div class="col-12">
+                        <!-- VTC Jobs Tab -->
+                        <div class="card" id="simjobs" style="display: none;">
+                            <div class="card-header d-flex justify-content-between"
+                                style="z-index: 0 !important;">
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">VTC Jobs</h3>
+                                </div>
+                            </div>
+
+                            <div class="card-body p-9">
+                                <table class="table card-text">
+                                    <thead>
+                                        <tr>
+                                            <th>Source</th>
+                                            <th>Destination</th>
+                                            <th>Cargo</th>
+                                            <th>Planned Distance</th>
+                                            <th>Game</th>
+                                            <th>DLCs Required</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="simJobsData"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
+
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    Copyright © TruckersHub 2023-24
+                </p>
+                <p id="version">
+                    Version V
+                </p>
+            </div>
+        </footer>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Main Theme JS File-->
-    <script src="https://demo.bootstrapious.com/bubbly/1-3-2/js/theme.87f0a411.js"></script>
-    <!-- Prism for syntax highlighting-->
-    <script src="vendor/prismjs/prism.js"></script>
-    <script src="vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-    <script src="vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-    <script type="text/javascript">
-        // Optional
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true,
-        });
 
-    </script>
-    <script src="tomselect/tom-select.js"></script>
-
-    <script src="https://truckershub.in/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
-
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="vendor/select2/js/select2.full.min.js"></script>
+    
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
     <script>
-        const data = require("../data.json");
-
-        // Game
-        const game = document.getElementById("game");
-
-        // Profiles
-        const profileDiv = document.getElementById("profileDiv");
-        const profiles = document.getElementById("profiles");
-
-        // Saves
-        const savesDiv = document.getElementById("savesDiv");
-        const saves = document.getElementById("saves");
+        jQuery(document).ready(function () {
+            dezSettingsOptions.version = 'dark';
+            new dezSettings(dezSettingsOptions);
+            jQuery(window).on('resize', function () {
+                dezSettingsOptions.version = 'dark';
+                new dezSettings(dezSettingsOptions);
+                jQuery('.dz-theme-mode').addClass('active');
+            });
+        });
     </script>
+
     <script src="mainjs/common.js"></script>
     <script src="mainjs/sim.js"></script>
 </body>

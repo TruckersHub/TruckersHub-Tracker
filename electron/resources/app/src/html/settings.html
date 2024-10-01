@@ -1,648 +1,701 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Client Settings</title>
+    <!-- Title -->
+    <title>TruckersHub Client</title>
 
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
 
-    <!-- Google fonts - Popppins for copy-->
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap"
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/truckershub.png">
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <!-- Prism Syntax Highlighting-->
-    <link rel="stylesheet" href="vendor/prismjs/plugins/toolbar/prism-toolbar.css">
-    <link rel="stylesheet" href="vendor/prismjs/themes/prism-okaidia.css">
-    <!-- The Main Theme stylesheet (Contains also Bootstrap CSS)-->
-    <link rel="stylesheet" href="css/style.default.63c85ff9.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.0a822280.css">
-    <link rel="stylesheet" href="https://truckershub.in/plugins/src/sweetalerts2/sweetalerts2.css">
-    <link rel="stylesheet" href="tomselect/tom-select.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="images/truckershub.png">
-    <script src="https://kit.fontawesome.com/c22d112cf6.js" crossorigin="anonymous"></script>
-    
-    <link href="icons/icons.css" rel="stylesheet">
-
-    <style>
-        .hidden {
-            visibility: hidden;
-        }
-    </style>
+        
+    <link rel="stylesheet" href="fontawesome/all.min.css">
 </head>
 
 <body>
-    <div class="draggable">
-        <h3>TruckersHub Client</h3>
+
+    <div id="preloader" class="spinner-wrapper">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
     </div>
-    <div class="d-flex align-items-stretch">
-        <!-- SideBar -->
-        <div class="sidebar py-3" id="sidebar">
-            <ul class="list-unstyled">
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="index.html">
-                        <i class="fa-solid fa-house me-3"></i>
-                        <span class="sidebar-link-title">Home</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="summary.html">
-                        <i class="fa-solid fa-list me-3"></i>
-                        <span class="sidebar-link-title">Summary</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:speedometer()">
-                        <i class="fa-solid fa-gauge me-3"></i>
-                        <span class="sidebar-link-title">Speedometer</span>
-                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:liveMap()">
-                        <i class="fa-solid fa-map me-3"></i>
-                        <span class="sidebar-link-title">Live Map</span>
-                    </a>
-                </li>
-                <!-- <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:helper()">
-                        <i class="fa-solid fa-desktop me-3"></i>
-                        <span class="sidebar-link-title">TruckersHub Helper</span>
-                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                    </a>
-                </li> -->
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="trucks.html">
-                        <i class="fa-solid fa-truck-front me-3"></i>
-                        <span class="sidebar-link-title">Assigned Trucks</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="simulation.html">
-                        <i class="fa-solid fa-truck me-3"></i>
-                        <span class="sidebar-link-title">Simulation</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="market.html">
-                        <i class="fa-solid fa-truck me-3"></i>
-                        <span class="sidebar-link-title">Cargo Market</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="dispatcher.html">
-                        <i class="fa-solid fa-file-pen me-3"></i>
-                        <span class="sidebar-link-title">Job Dispatcher</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:sponsor()">
-                        <i class="fa-solid fa-dollar me-3"></i>
-                        <span class="sidebar-link-title">Sponsor</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted active" href="settings.html">
-                        <i class="fa-solid fa-gear me-3"></i>
-                        <span class="sidebar-link-title">Settings</span>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a class="sidebar-link text-muted" href="javascript:restart()">
-                        <i class="fa-solid fa-power-off me-3"></i>
-                        <span class="sidebar-link-title">Restart</span>
-                    </a>
-                </li>
-            </ul>
-            <!-- <h6 class="sidebar-heading">Main</h6> -->
-            <!-- <ul class="list-unstyled">
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted " href="#" data-bs-target="#dashboardsDropdown"
-                        role="button" aria-expanded="false" data-bs-toggle="collapse">
-                        <svg class="svg-icon svg-icon-md me-3">
-                            <use
-                                xlink:href="https://demo.bootstrapious.com/bubbly/1-3-2/icons/orion-svg-sprite.71e9f5f2.svg#real-estate-1">
-                            </use>
-                        </svg><span class="sidebar-link-title">Dashboards </span></a>
-                    <ul class="sidebar-menu list-unstyled collapse " id="dashboardsDropdown">
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index.html">Default</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-cms.html">CMS</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted"
-                                href="index-e-commerce.html">E-commerce</a></li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-projects.html">Projects</a>
-                        </li>
-                        <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index-charts.html">Charts</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul> -->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <div class="draggable">
+            <h3>TruckersHub Client</h3>
         </div>
 
-        <div class="page-holder bg-gray-100">
-            <div class="container-fluid px-lg-4 px-xl-5">
-                <section>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-profile mb-4">
-                                <div class="card-header">
-                                    <div class="simple-tab">
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="general" data-bs-toggle="tab" data-bs-target="#general-pane"
-                                                    type="button" role="tab" aria-controls="general-pane" aria-selected="true">
-                                                    General
-                                                </button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="overlay" data-bs-toggle="tab" data-bs-target="#overlay-pane"
-                                                    type="button" role="tab" aria-controls="overlay-pane" aria-selected="false">
-                                                    Game Overlay
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <form action="javascript:settingsUpdate(this)"  id="form">
-                                    <div class="card-body text-center">
-                                        <!-- General -->
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="general-pane" role="tabpanel" aria-labelledby="general" tabindex="0">
-                                                <h3 class="mb-5">Localization settings</h3>
-                                                <div class="row" style="text-align: left;">
-                                                    <div class="col-6">
-                                                        <div class="select mb-3">
-                                                            <div class="form-check form-switch form-check-inline">
-                                                                <input class="form-check-input" type="checkbox" role="switch" id="minimized" name="minimized">
-                                                                <label class="form-check-label" for="minimized">
-                                                                    Run Client Minimized
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="select mb-3">
-                                                            <div class="form-check form-switch form-check-inline">
-                                                                <input class="form-check-input" type="checkbox" role="switch" id="saveFormat" name="saveFormat">
-                                                                <label class="form-check-label" for="saveFormat">
-                                                                    Save Format Type (Set Format to 2 for using TruckersHub Job Dispatcher)
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-    
-                                                    <!-- Measurement -->
-                                                    <div class="col-6">
-                                                        <label class="form-label">Measurement system - ETS2</label>
-                                                        <div class="select mb-3">
-                                                            <select class="form-control" name="measurement.ets2" id="measurement.ets2">
-                                                                <option value="metric">Metric System</option>
-                                                                <option value="imperial">Imperial System</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <label class="form-label">Measurement system - ATS</label>
-                                                        <div class="select mb-3">
-                                                            <select class="form-control" name="measurement.ats" id="measurement.ats">
-                                                                <option value="metric">Metric System</option>
-                                                                <option value="imperial">Imperial System</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-    
-                                                    <!-- Currency -->
-                                                    <div class="col-6">
-                                                        <label class="form-label">Currency - ETS2</label>
-                                                        <div class="select mb-3">
-                                                            <select class="form-control" name="currency.ets2" id="currency.ets2">
-                                                                <option value="eur">Euro</option>
-                                                                <option value="usd">US Dollars</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 mb-3">
-                                                        <label class="form-label">Measurement system - ATS</label>
-                                                        <div class="select mb-3">
-                                                            <select class="form-control" name="currency.ats" id="currency.ats">
-                                                                <option value="eur">Euro</option>
-                                                                <option value="usd">US Dollars</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="images/truckershub.png" alt="">
+                <!-- <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt=""> -->
+            </a>
 
-                                                    <!--  -->
-                                                    <div class="col-6">
-                                                        <div class="select mb-3">
-                                                            <div class="form-check form-switch form-check-inline">
-                                                                <input class="form-check-input sub" type="checkbox" role="switch" id="antiafk" name="antiafk">
-                                                                <label class="form-check-label" for="antiafk">
-                                                                    Anti AFK Kick for TruckersMP
-                                                                </label>
-                                                                <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                                                            </div>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                TruckersHub Settings
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right" id="menubar"></ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="deznav">
+            <div class="deznav-scroll" id="sidebar"></div>
+        </div>
+
+        <div class="content-body default-height">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-profile mb-4">
+                            <div class="card-header">
+                                <div class="simple-tab">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="general" data-bs-toggle="tab" data-bs-target="#general-pane"
+                                                type="button" role="tab" aria-controls="general-pane" aria-selected="true">
+                                                General
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="overlay" data-bs-toggle="tab" data-bs-target="#overlay-pane"
+                                                type="button" role="tab" aria-controls="overlay-pane" aria-selected="false">
+                                                Game Overlay
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <form action="javascript:settingsUpdate(this)"  id="form">
+                                <div class="card-body text-center">
+                                    <!-- General -->
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="general-pane" role="tabpanel" aria-labelledby="general" tabindex="0">
+                                            <h3 class="mb-5">Localization settings</h3>
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" role="switch" id="minimized" name="minimized">
+                                                            <label class="form-check-label" for="minimized">
+                                                                Run Client Minimized
+                                                            </label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
-                                                        <div class="select mb-3">
-                                                            <div class="form-check form-switch form-check-inline">
-                                                                <input class="form-check-input sub" type="checkbox" role="switch" id="autolight" name="autolight">
-                                                                <label class="form-check-label" for="autolight">
-                                                                    Automatic Lights On for TruckersMP
-                                                                </label>
-                                                                <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                                                            </div>
-                                                            <div class="select mb-3">
-                                                                <input class="form-control" type="text" id="autolightkey" name="autolightkey" placeholder="Light Key Bind">
-                                                            </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" role="switch" id="saveFormat" name="saveFormat">
+                                                            <label class="form-check-label" for="saveFormat">
+                                                                Save Format Type (Set Format to 2 for using TruckersHub Job Dispatcher)
+                                                            </label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                </div>
+
+                                                <!-- Measurement -->
+                                                <div class="col-6">
+                                                    <label class="form-label">Measurement system - ETS2</label>
+                                                    <div class="select mb-3">
+                                                        <select class="form-control" name="measurement.ets2" id="measurement.ets2">
+                                                            <option value="metric">Metric System</option>
+                                                            <option value="imperial">Imperial System</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label">Measurement system - ATS</label>
+                                                    <div class="select mb-3">
+                                                        <select class="form-control" name="measurement.ats" id="measurement.ats">
+                                                            <option value="metric">Metric System</option>
+                                                            <option value="imperial">Imperial System</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Currency -->
+                                                <div class="col-6">
+                                                    <label class="form-label">Currency - ETS2</label>
+                                                    <div class="select mb-3">
+                                                        <select class="form-control" name="currency.ets2" id="currency.ets2">
+                                                            <option value="eur">Euro</option>
+                                                            <option value="usd">US Dollars</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 mb-3">
+                                                    <label class="form-label">Measurement system - ATS</label>
+                                                    <div class="select mb-3">
+                                                        <select class="form-control" name="currency.ats" id="currency.ats">
+                                                            <option value="eur">Euro</option>
+                                                            <option value="usd">US Dollars</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!--  -->
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input sub" type="checkbox" role="switch" id="antiafk" name="antiafk">
+                                                            <label class="form-check-label" for="antiafk">
+                                                                Anti AFK Kick for TruckersMP
+                                                            </label>
+                                                            <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input sub" type="checkbox" role="switch" id="autolight" name="autolight">
+                                                            <label class="form-check-label" for="autolight">
+                                                                Automatic Lights On for TruckersMP
+                                                            </label>
+                                                            <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        </div>
                                                         <div class="select mb-3">
-                                                            <div class="form-check form-switch form-check-inline">
-                                                                <input class="form-check-input sub" type="checkbox" role="switch" id="automsg" name="automsg">
-                                                                <label class="form-check-label" for="automsg">
-                                                                    Automatic Message On TruckersMP
-                                                                </label>
-                                                                <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
-                                                            </div>
-                                                            <div class="select mb-3">
-                                                                <input class="form-control" type="text" id="automsgkey" name="automsgkey" placeholder="Message to be sent">
-                                                            </div>
+                                                            <input class="form-control" type="text" id="autolightkey" name="autolightkey" placeholder="Light Key Bind">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input sub" type="checkbox" role="switch" id="automsg" name="automsg">
+                                                            <label class="form-check-label" for="automsg">
+                                                                Automatic Message On TruckersMP
+                                                            </label>
+                                                            <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        </div>
+                                                        <div class="select mb-3">
+                                                            <input class="form-control" type="text" id="automsgkey" name="automsgkey" placeholder="Message to be sent">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr>
+                                                <!-- Sound Alerts -->
+                                                <h2 class="mb-3">Speed Sound Alerts</h2>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input sub" type="checkbox" role="switch" id="soundAlerts.enableRoadSpeedETS2" name="soundAlerts.enableRoadSpeedETS2">
+                                                            <label class="form-check-label" for="soundAlerts.enableRoadSpeedETS2">
+                                                                Road Speed Limit Alert (ETS2)
+                                                            </label>
+                                                            <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input sub" type="checkbox" role="switch" id="soundAlerts.enableRoadSpeedATS" name="soundAlerts.enableRoadSpeedATS">
+                                                            <label class="form-check-label" for="soundAlerts.enableRoadSpeedATS">
+                                                                Road Speed Limit Alert (ATS)
+                                                            </label>
+                                                            <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.roadToleranceETS2">
+                                                            Tolerance (ETS2)
+                                                        </label>
+                                                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control sub" id="soundAlerts.roadToleranceETS2" name="soundAlerts.roadToleranceETS2" value="0">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.roadToleranceATS">
+                                                            Tolerance (ATS)
+                                                        </label>
+                                                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control sub" id="soundAlerts.roadToleranceATS" name="soundAlerts.roadToleranceATS" value="0">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" role="switch" id="soundAlerts.enableMaxSpeedETS2" name="soundAlerts.enableMaxSpeedETS2">
+                                                            <label class="form-check-label" for="soundAlerts.enableMaxSpeedETS2">
+                                                                Max Speed Alert (ETS2)
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="select mb-3">
+                                                        <div class="form-check form-switch form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" role="switch" id="soundAlerts.enableMaxSpeedATS" name="soundAlerts.enableMaxSpeedATS">
+                                                            <label class="form-check-label" for="soundAlerts.enableMaxSpeedATS">
+                                                                Max Speed Alert (ATS)
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.toleranceETS2">
+                                                            Tolerance (ETS2)
+                                                        </label>
+                                                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control sub" id="soundAlerts.toleranceETS2" name="soundAlerts.toleranceETS2" value="0">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.toleranceATS">
+                                                            Tolerance (ATS)
+                                                        </label>
+                                                        <i class="fas fa-star text-warning" title="TruckersHub Paid Feature"></i>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control sub" id="soundAlerts.toleranceATS" name="soundAlerts.toleranceATS" value="0">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.maxSpeedETS2">
+                                                            Max Speed (ETS2)
+                                                        </label>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control" id="soundAlerts.maxSpeedETS2" name="soundAlerts.maxSpeedETS2" value="95">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="">
+                                                        <label class="form-check-label" for="soundAlerts.maxSpeedATS">
+                                                            Tolerance (ATS)
+                                                        </label>
+                                                        <div class="input-group mb-3 input-primary">
+                                                            <input type="number" class="form-control" id="soundAlerts.maxSpeedATS" name="soundAlerts.maxSpeedATS" value="125">
+                                                            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            <span class="input-group-text">km/h</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-    
-                                            <!-- Overlay Tab -->
-                                            <div class="tab-pane fade" id="overlay-pane" role="tabpanel" aria-labelledby="overlay" tabindex="0">
-                                                <div class="card mb-5">
-                                                    <div class="card-header">
-                                                        In-Game Overlay
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <p>
-                                                            "ctrl + ` " then "Left Click" to manage Overlay Position in game
-                                                        </p>
-                                                        <button class="btn btn-primary mb-3" type="button" onclick="resetPos()">Reset Position</button>
-                                                        <div class="row" style="text-align: left;">
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.main.enable" name="overlay.main.enable">
-                                                                        <label class="form-check-label" for="overlay.main.enable">
-                                                                            Enable Main Overlay
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.game.enable" name="overlay.game.enable">
-                                                                        <label class="form-check-label" for="overlay.game.enable">
-                                                                            Enable Game Info Overlay
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 mb-3">
-                                                                <label class="form-label" for="overlay.main.type">Main Overlay Type</label>
-                                                                <div class="select mb-3">
-                                                                    <select class="form-control" name="overlay.main.type" id="overlay.main.type">
-                                                                        <option value="bar">Bar Type</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 mb-3">
-                                                                <label class="form-label" for="overlay.game.type">Game Overlay Type</label>
-                                                                <div class="select mb-3">
-                                                                    <select class="form-control" name="overlay.game.type" id="overlay.game.type">
-                                                                        <option value="bar">Bar Type</option>
-                                                                        <option value="rectangle">Recatngle Type</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 mb-3">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.map.enable" name="overlay.map.enable">
-                                                                        <label class="form-check-label" for="overlay.map.enable">
-                                                                            Enable Live Map Overlay
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- <div class="col-6 mb-3">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.speedometer.enable" name="overlay.speedometer.enable">
-                                                                        <label class="form-check-label" for="overlay.speedometer.enable">
-                                                                            Enable Game Info Overlay
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div> -->
-                                                            <div class="col-6 mb-3">
-                                                                <label class="form-label" for="overlay.font.size">Overlay Font Size</label>
-                                                                <div class="select mb-3">
-                                                                    <input class="form-control" type="text" id="overlay.font.size" name="overlay.font.size">
-                                                                </div>
-                                                            </div>
+                                        </div>
 
-                                                            <!-- Truck Details -->
-                                                            <h3>Truck Details</h3>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.name" name="overlay.truck.name">
-                                                                        <label class="form-check-label" for="overlay.truck.name">
-                                                                            Show Truck Brand and logo
-                                                                        </label>
-                                                                    </div>
+                                        <!-- Overlay Tab -->
+                                        <div class="tab-pane fade" id="overlay-pane" role="tabpanel" aria-labelledby="overlay" tabindex="0">
+                                            <div class="card mb-5">
+                                                <div class="card-header">
+                                                    In-Game Overlay
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>
+                                                        "ctrl + ` " then "Left Click" to manage Overlay Position in game
+                                                    </p>
+                                                    <button class="btn btn-primary mb-3" type="button" onclick="resetPos()">Reset Position</button>
+                                                    <div class="row" style="text-align: left;">
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.main.enable" name="overlay.main.enable">
+                                                                    <label class="form-check-label" for="overlay.main.enable">
+                                                                        Enable Main Overlay
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.odometer" name="overlay.truck.odometer">
-                                                                        <label class="form-check-label" for="overlay.truck.odometer">
-                                                                            Show Truck Odometer
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.game.enable" name="overlay.game.enable">
+                                                                    <label class="form-check-label" for="overlay.game.enable">
+                                                                        Enable Game Info Overlay
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.damage" name="overlay.truck.damage">
-                                                                        <label class="form-check-label" for="overlay.truck.damage">
-                                                                            Show Truck Damage
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6 mb-3">
+                                                            <label class="form-label" for="overlay.main.type">Main Overlay Type</label>
+                                                            <div class="select mb-3">
+                                                                <select class="form-control" name="overlay.main.type" id="overlay.main.type">
+                                                                    <option value="bar">Bar Type</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6 mb-3">
+                                                            <label class="form-label" for="overlay.game.type">Game Overlay Type</label>
+                                                            <div class="select mb-3">
+                                                                <select class="form-control" name="overlay.game.type" id="overlay.game.type">
+                                                                    <option value="bar">Bar Type</option>
+                                                                    <option value="rectangle">Recatngle Type</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6 mb-3">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.map.enable" name="overlay.map.enable">
+                                                                    <label class="form-check-label" for="overlay.map.enable">
+                                                                        Enable Live Map Overlay
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.gear" name="overlay.truck.gear">
-                                                                        <label class="form-check-label" for="overlay.truck.gear">
-                                                                            Show Truck Gear
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <!-- <div class="col-6 mb-3">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.speedometer.enable" name="overlay.speedometer.enable">
+                                                                    <label class="form-check-label" for="overlay.speedometer.enable">
+                                                                        Enable Game Info Overlay
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.fuel" name="overlay.truck.fuel">
-                                                                        <label class="form-check-label" for="overlay.truck.fuel">
-                                                                            Show Truck Fuel
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
+                                                        </div> -->
+                                                        <div class="col-6 mb-3">
+                                                            <label class="form-label" for="overlay.font.size">Overlay Font Size</label>
+                                                            <div class="select mb-3">
+                                                                <input class="form-control" type="text" id="overlay.font.size" name="overlay.font.size">
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.speed" name="overlay.truck.speed">
-                                                                        <label class="form-check-label" for="overlay.truck.speed">
-                                                                            Show Truck Speed
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.speedLimit" name="overlay.truck.speedLimit">
-                                                                        <label class="form-check-label" for="overlay.truck.speedLimit">
-                                                                            Show Speed limit
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.cruizeControl" name="overlay.truck.cruizeControl">
-                                                                        <label class="form-check-label" for="overlay.truck.cruizeControl">
-                                                                            Show Cruize Control
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        </div>
 
-                                                            <!-- Truck Indicators -->
-                                                            <h3>Truck Indicators</h3>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.blinkers" name="overlay.indicators.blinkers">
-                                                                        <label class="form-check-label" for="overlay.indicators.blinkers">
-                                                                            Show Blinkers
-                                                                        </label>
-                                                                    </div>
+                                                        <!-- Truck Details -->
+                                                        <h3>Truck Details</h3>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.name" name="overlay.truck.name">
+                                                                    <label class="form-check-label" for="overlay.truck.name">
+                                                                        Show Truck Brand and logo
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.lowbeam" name="overlay.indicators.lowbeam">
-                                                                        <label class="form-check-label" for="overlay.indicators.lowbeam">
-                                                                            Show Low Beam Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.odometer" name="overlay.truck.odometer">
+                                                                    <label class="form-check-label" for="overlay.truck.odometer">
+                                                                        Show Truck Odometer
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.highbeam" name="overlay.indicators.highbeam">
-                                                                        <label class="form-check-label" for="overlay.indicators.highbeam">
-                                                                            Show High Beam Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.damage" name="overlay.truck.damage">
+                                                                    <label class="form-check-label" for="overlay.truck.damage">
+                                                                        Show Truck Damage
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.hazard" name="overlay.indicators.hazard">
-                                                                        <label class="form-check-label" for="overlay.indicators.hazard">
-                                                                            Show Hazard Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.gear" name="overlay.truck.gear">
+                                                                    <label class="form-check-label" for="overlay.truck.gear">
+                                                                        Show Truck Gear
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.parkingBreak" name="overlay.indicators.parkingBreak">
-                                                                        <label class="form-check-label" for="overlay.indicators.parkingBreak">
-                                                                            Show Parking Break Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.fuel" name="overlay.truck.fuel">
+                                                                    <label class="form-check-label" for="overlay.truck.fuel">
+                                                                        Show Truck Fuel
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.engineBreak" name="overlay.indicators.engineBreak">
-                                                                        <label class="form-check-label" for="overlay.indicators.engineBreak">
-                                                                            Show Engine Break Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.speed" name="overlay.truck.speed">
+                                                                    <label class="form-check-label" for="overlay.truck.speed">
+                                                                        Show Truck Speed
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.beacon" name="overlay.indicators.beacon">
-                                                                        <label class="form-check-label" for="overlay.indicators.beacon">
-                                                                            Show Beacon Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.speedLimit" name="overlay.truck.speedLimit">
+                                                                    <label class="form-check-label" for="overlay.truck.speedLimit">
+                                                                        Show Speed limit
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.sleep" name="overlay.indicators.sleep">
-                                                                        <label class="form-check-label" for="overlay.indicators.sleep">
-                                                                            Show Sleep Indicator
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.truck.cruizeControl" name="overlay.truck.cruizeControl">
+                                                                    <label class="form-check-label" for="overlay.truck.cruizeControl">
+                                                                        Show Cruize Control
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.differential" name="overlay.indicators.differential">
-                                                                        <label class="form-check-label" for="overlay.indicators.differential">
-                                                                            Show Differential Lock Indicator
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.wipers" name="overlay.indicators.wipers">
-                                                                        <label class="form-check-label" for="overlay.indicators.wipers">
-                                                                            Show Wipers Indicator
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        </div>
 
-                                                            <!-- Job Details -->
-                                                            <h3>Job Details</h3>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.srcdest" name="overlay.job.srcdest">
-                                                                        <label class="form-check-label" for="overlay.job.srcdest">
-                                                                            Show Source and Destination
-                                                                        </label>
-                                                                    </div>
+                                                        <!-- Truck Indicators -->
+                                                        <h3>Truck Indicators</h3>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.blinkers" name="overlay.indicators.blinkers">
+                                                                    <label class="form-check-label" for="overlay.indicators.blinkers">
+                                                                        Show Blinkers
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.cargo" name="overlay.job.cargo">
-                                                                        <label class="form-check-label" for="overlay.job.cargo">
-                                                                            Show Cargo Details
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.lowbeam" name="overlay.indicators.lowbeam">
+                                                                    <label class="form-check-label" for="overlay.indicators.lowbeam">
+                                                                        Show Low Beam Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.market" name="overlay.job.market">
-                                                                        <label class="form-check-label" for="overlay.job.market">
-                                                                            Show Job Market
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.highbeam" name="overlay.indicators.highbeam">
+                                                                    <label class="form-check-label" for="overlay.indicators.highbeam">
+                                                                        Show High Beam Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.trailerDamage" name="overlay.job.trailerDamage">
-                                                                        <label class="form-check-label" for="overlay.job.trailerDamage">
-                                                                            Show Trailer Damage
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.hazard" name="overlay.indicators.hazard">
+                                                                    <label class="form-check-label" for="overlay.indicators.hazard">
+                                                                        Show Hazard Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.cargoDamage" name="overlay.job.cargoDamage">
-                                                                        <label class="form-check-label" for="overlay.job.cargoDamage">
-                                                                            Show Cargo Damage
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.parkingBreak" name="overlay.indicators.parkingBreak">
+                                                                    <label class="form-check-label" for="overlay.indicators.parkingBreak">
+                                                                        Show Parking Break Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.income" name="overlay.job.income">
-                                                                        <label class="form-check-label" for="overlay.job.income">
-                                                                            Show Expected Income
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.engineBreak" name="overlay.indicators.engineBreak">
+                                                                    <label class="form-check-label" for="overlay.indicators.engineBreak">
+                                                                        Show Engine Break Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.jobTimeRemaining" name="overlay.job.jobTimeRemaining">
-                                                                        <label class="form-check-label" for="overlay.job.jobTimeRemaining">
-                                                                            Show Job Time Remaining
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.beacon" name="overlay.indicators.beacon">
+                                                                    <label class="form-check-label" for="overlay.indicators.beacon">
+                                                                        Show Beacon Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.expectedTime" name="overlay.job.expectedTime">
-                                                                        <label class="form-check-label" for="overlay.job.expectedTime">
-                                                                            Show Expected Delivery Time
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.sleep" name="overlay.indicators.sleep">
+                                                                    <label class="form-check-label" for="overlay.indicators.sleep">
+                                                                        Show Sleep Indicator
+                                                                    </label>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.differential" name="overlay.indicators.differential">
+                                                                    <label class="form-check-label" for="overlay.indicators.differential">
+                                                                        Show Differential Lock Indicator
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.indicators.wipers" name="overlay.indicators.wipers">
+                                                                    <label class="form-check-label" for="overlay.indicators.wipers">
+                                                                        Show Wipers Indicator
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                            <!-- Navigation Details -->
-                                                            <h3>Navigation Details</h3>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.navigation.distanceRemaining" name="overlay.navigation.distanceRemaining">
-                                                                        <label class="form-check-label" for="overlay.navigation.distanceRemaining">
-                                                                            Show Navigation Distance Remaining
-                                                                        </label>
-                                                                    </div>
+                                                        <!-- Job Details -->
+                                                        <h3>Job Details</h3>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.srcdest" name="overlay.job.srcdest">
+                                                                    <label class="form-check-label" for="overlay.job.srcdest">
+                                                                        Show Source and Destination
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <div class="select mb-3">
-                                                                    <div class="form-check form-switch form-check-inline">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="overlay.navigation.realTimeRemaining" name="overlay.navigation.realTimeRemaining">
-                                                                        <label class="form-check-label" for="overlay.navigation.realTimeRemaining">
-                                                                            Show Navigation Real Time Remaining
-                                                                        </label>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.cargo" name="overlay.job.cargo">
+                                                                    <label class="form-check-label" for="overlay.job.cargo">
+                                                                        Show Cargo Details
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.market" name="overlay.job.market">
+                                                                    <label class="form-check-label" for="overlay.job.market">
+                                                                        Show Job Market
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.trailerDamage" name="overlay.job.trailerDamage">
+                                                                    <label class="form-check-label" for="overlay.job.trailerDamage">
+                                                                        Show Trailer Damage
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.cargoDamage" name="overlay.job.cargoDamage">
+                                                                    <label class="form-check-label" for="overlay.job.cargoDamage">
+                                                                        Show Cargo Damage
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.income" name="overlay.job.income">
+                                                                    <label class="form-check-label" for="overlay.job.income">
+                                                                        Show Expected Income
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.jobTimeRemaining" name="overlay.job.jobTimeRemaining">
+                                                                    <label class="form-check-label" for="overlay.job.jobTimeRemaining">
+                                                                        Show Job Time Remaining
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.job.expectedTime" name="overlay.job.expectedTime">
+                                                                    <label class="form-check-label" for="overlay.job.expectedTime">
+                                                                        Show Expected Delivery Time
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Navigation Details -->
+                                                        <h3>Navigation Details</h3>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.navigation.distanceRemaining" name="overlay.navigation.distanceRemaining">
+                                                                    <label class="form-check-label" for="overlay.navigation.distanceRemaining">
+                                                                        Show Navigation Distance Remaining
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="select mb-3">
+                                                                <div class="form-check form-switch form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="overlay.navigation.realTimeRemaining" name="overlay.navigation.realTimeRemaining">
+                                                                    <label class="form-check-label" for="overlay.navigation.realTimeRemaining">
+                                                                        Show Navigation Real Time Remaining
+                                                                    </label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -651,54 +704,48 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-footer">
-                                        <button class="btn btn-primary" type="submit">Save</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start fw-bold">
-                            <p class="mb-2 mb-md-0 fw-bold">TruckersHub &copy; 2023-2024</p>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end text-gray-400">
-                            <p class="mb-0" id="version">Version V</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
-    </div>
-    <!-- JavaScript files-->
-    <script
-        src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Main Theme JS File-->
-    <script src="https://demo.bootstrapious.com/bubbly/1-3-2/js/theme.87f0a411.js"></script>
-    <!-- Prism for syntax highlighting-->
-    <script src="vendor/prismjs/prism.js"></script>
-    <script
-        src="vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-    <script
-        src="vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script
-        src="vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-    <script type="text/javascript">
-        // Optional
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true,
-        });
 
-    </script>
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    Copyright © TruckersHub 2023-24
+                </p>
+                <p id="version">
+                    Version V
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="vendor/select2/js/select2.full.min.js"></script>
     
-    <script src="https://truckershub.in/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            dezSettingsOptions.version = 'dark';
+            new dezSettings(dezSettingsOptions);
+            jQuery(window).on('resize', function () {
+                dezSettingsOptions.version = 'dark';
+                new dezSettings(dezSettingsOptions);
+                jQuery('.dz-theme-mode').addClass('active');
+            });
+        });
+    </script>
+
     <script src="mainjs/common.js"></script>
     <script src="mainjs/settings.js"></script>
 </body>
