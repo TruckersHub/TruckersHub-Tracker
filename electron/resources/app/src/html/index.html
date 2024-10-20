@@ -21,6 +21,12 @@
         rel="stylesheet">
         
     <link rel="stylesheet" href="fontawesome/all.min.css">
+
+    <style>
+        .fa-solid.fa-signal:hover {
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -77,7 +83,102 @@
         <div class="content-body default-height">
             <!-- row -->
             <div class="container-fluid">
-                <div class="row" id="blogList"></div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row" id="blogList"></div>
+                    </div>
+                    <div class="col-4" style="padding-left: 30px; position: fixed; right: 0;">
+                        <div class="card">
+                            <div class="card-header">
+                                Gateways
+                            </div>
+                            <div class="card-body">
+                                <table
+                                    class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                    <thead>
+                                        <tr class="fw-bold text-muted">
+                                            <th>
+                                                Server
+                                            </th>
+                                            <th>
+                                                Ping
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="gateways"></tbody>
+                                </table>
+                                <script>
+                                    const gateways = [
+                                        {
+                                            name: "Main",
+                                            url: "wss://gateway.truckershub.in/",
+                                            ping: Infinity
+                                        },
+                                        {
+                                            name: "US West",
+                                            url: "wss://gateway-usw.truckershub.in/",
+                                            ping: Infinity
+                                        }
+                                    ]
+
+                                    async function pingGateway(gateway) {
+                                        return new Promise((resolve) => {
+                                            const start = performance.now();
+                                            const socket = new WebSocket(gateway.url);
+
+                                            socket.onopen = () => {
+                                                const pingStart = Date.now();
+                                                socket.send(JSON.stringify({
+                                                    type: "ping",
+                                                    data: {}
+                                                }))
+
+                                                socket.onmessage = function(event) {
+                                                    const message = JSON.parse(event.data);
+                                                    if (message.type === 'pong') {
+                                                        const ping = Date.now() - pingStart;
+                                                        gateway.ping = ping;
+                                                        socket.close();
+                                                        resolve();
+                                                    }
+                                                };
+                                            };
+
+                                            socket.onerror = () => {
+                                                gateway.ping = Infinity;
+                                                resolve();
+                                            };
+                                        });
+                                    }
+
+                                    async function findBestGateway() {
+                                        await Promise.all(gateways.map(gateway => pingGateway(gateway)));
+                                        return gateways;
+                                    };
+
+                                    (async function () {
+                                        await findBestGateway();
+
+                                        const gatewayTable = document.getElementById("gateways");
+                                        if (gatewayTable) {
+                                            for (var i = 0; i < gateways.length; i++) {
+                                                const tr = document.createElement("tr");
+                                                tr.innerHTML = `<td>
+                                                                    ${gateways[i].name}
+                                                                </td>
+                                                                <td>
+                                                                    ${gateways[i].ping < 100 ? '<i class="fa-solid fa-signal text-success" title="' + gateways[i].ping + '"></i>' : gateways[i].ping < 200 ? '<i class="fa-solid fa-signal text-warning" title="' + gateways[i].ping + '"></i>' : '<i class="fa-solid fa-signal text-danger" title="' + gateways[i].ping + '"></i>'}
+                                                                    ${gateways[i].ping}ms
+                                                                </td>`;
+                                                gatewayTable.appendChild(tr);
+                                            }
+                                        }
+                                    })();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--**********************************
