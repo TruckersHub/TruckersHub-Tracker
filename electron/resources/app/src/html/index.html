@@ -31,7 +31,7 @@
 
 <body>
 
-    <div id="preloader">
+    <div id="preloader" class="spinner-wrapper">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
             <div class="sk-child sk-bounce2"></div>
@@ -88,6 +88,12 @@
                         <div class="row" id="blogList"></div>
                     </div>
                     <div class="col-4" style="padding-left: 30px; position: fixed; right: 0;">
+                        <div class="d-flex justify-content-center mb-4" style="display: none !important;" id="connectDiscord">
+                            <button onclick="connectDiscord()" type="button" class="btn btn-twitter">
+                                Connect Discord <span class="btn-icon-right"><i class="fab fa-discord"></i></span>
+                            </button>
+                        </div>
+
                         <div class="card">
                             <div class="card-header">
                                 Gateways
