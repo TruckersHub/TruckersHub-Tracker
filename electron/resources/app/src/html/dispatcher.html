@@ -82,9 +82,6 @@
                         <div class="card card-profile mb-4">
                             <div class="card-header d-flex justify-content-between">
                                 Job Dispatcher
-                                <a href="javascript:void(0)" title="Open Config.cfg and set 'save_format' to '2'">
-                                    How to use Job Dispatcher?
-                                </a>
                             </div>
                             <div class="card-body text-center">
                                 <button class="btn btn-primary" type="button" onclick="loadQuickAccessData()">
@@ -141,27 +138,6 @@
                                                 data-bs-target="#vtcjobs-pane" type="button" role="tab"
                                                 aria-controls="vtcjobs-pane" aria-selected="false">
                                                 VTC Jobs
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="position" data-bs-toggle="tab"
-                                                data-bs-target="#position-pane" type="button" role="tab"
-                                                aria-controls="position-pane" aria-selected="false">
-                                                Game Positions
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="trucks" data-bs-toggle="tab"
-                                                data-bs-target="#trucks-pane" type="button" role="tab"
-                                                aria-controls="trucks-pane" aria-selected="false">
-                                                Trucks
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="trailers" data-bs-toggle="tab"
-                                                data-bs-target="#trailers-pane" type="button" role="tab"
-                                                aria-controls="trailers-pane" aria-selected="false">
-                                                Trailers
                                             </button>
                                         </li>
                                     </ul>
@@ -343,172 +319,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Game Positions Tab -->
-                            <div class="tab-pane fade" id="position-pane" role="tabpanel" aria-labelledby="position"
-                                tabindex="0">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Game Positions
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row mb-3">
-                                            <div class="col-12 text-start">
-                                                <label for="position" class="form-label">Current Position</label>
-                                                <br>
-                                                <div class="d-flex">
-                                                    <button class="btn btn-primary me-3" type="button" id="position"
-                                                        onclick="currPosition('position')">
-                                                        Share Current Truck & Trailer Position
-                                                    </button>
-                                                    <button class="btn btn-primary me-3" type="button" id="truckPosition"
-                                                        onclick="currPosition('truckPosition')">
-                                                        Share Current Truck Position
-                                                    </button>
-                                                    <button class="btn btn-primary me-3" type="button" id="trailerPosition"
-                                                        onclick="currPosition('trailerPosition')">
-                                                        Share Current Trailer Position
-                                                    </button>
-                                                </div>
-                                                <p style="display: none;">Unique ID: <span id="positionCode"></span>
-                                                </p>
-                                            </div>
-                                            <div class="col-md-6 text-start">
-                                                <label for="waypoints" class="form-label">Current Waypoints</label> <br>
-                                                <button class="btn btn-primary" type="button" id="waypoints" onclick="waypoints()">
-                                                    Share Current Game Way Points
-                                                </button>
-                                                <p style="display: none;">Unique ID: <span id="waypointsCode"></span></p>
-                                            </div>
-                                        </div>
-                                        <h3>Teleport to Location</h3>
-                                        <div class="row mb-3">
-                                            <div class="col-md-6 text-start">
-                                                <label for="city" class="form-label">City</label>
-                                                <select class="form-control sub-300" id="city"
-                                                    placeholder="Select..." autocomplete="off"
-                                                    onchange="companyChange(this.id, this.value)">
-                                                    <option disabled selected value>Select...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 text-start">
-                                                <label for="company" class="form-label">Company</label>
-                                                <select class="form-control sub-300" id="company"
-                                                    placeholder="Select..." autocomplete="off">
-                                                    <option disabled selected value>Select...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="btn btn-primary sub-300" type="button"
-                                            onclick="positionUpdate()">
-                                            Teleport
-                                        </button>
-                                        <i class="fas fa-star text-warning" title="TruckersHub Premium Feature"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Trucks Tab -->
-                            <div class="tab-pane fade" id="trucks-pane" role="tabpanel" aria-labelledby="trucks"
-                                tabindex="0">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Trucks
-                                    </div>
-                                    <div class="card-body">
-                                        <label for="truck" class="form-label">Trucks</label>
-                                        <div class="row align-items-center mb-3">
-                                            <div class="col-md-6 text-start">
-                                                <select class="form-control" id="truck" placeholder="Select..."
-                                                    autocomplete="off">
-                                                    <option disabled selected value>Select...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 text-start">
-                                                <button class="btn btn-primary sub-300" type="button"
-                                                    onclick="fixAllTruck()">
-                                                    Fix All
-                                                    <i class="fas fa-star text-warning"
-                                                        title="TruckersHub Premium Feature"></i>
-                                                </button>
-                                                <button class="btn btn-primary sub-300" type="button"
-                                                    onclick="refuelAllTruck()">
-                                                    Refuel All
-                                                    <i class="fas fa-star text-warning"
-                                                        title="TruckersHub Premium Feature"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary sub" type="button" onclick="switchTruck()">
-                                            Switch
-                                            <i class="fas fa-star text-warning"
-                                                title="TruckersHub Standard Feature"></i>
-                                        </button>
-                                        <button class="btn btn-primary sub" type="button" onclick="fixTruck()">
-                                            Fix
-                                            <i class="fas fa-star text-warning"
-                                                title="TruckersHub Standard Feature"></i>
-                                        </button>
-                                        <button class="btn btn-primary sub-300" type="button"
-                                            onclick="refuelTruck()">
-                                            Refuel
-                                            <i class="fas fa-star text-warning"
-                                                title="TruckersHub Premium Feature"></i>
-                                        </button>
-                                        <button class="btn btn-primary" type="button" onclick="configTruck()">
-                                            Share Truck Config
-                                        </button>
-                                        <p style="display: none;">Shared Truck Unique ID: <span
-                                                id="configCode"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Trailer Tab -->
-                            <div class="tab-pane fade" id="trailers-pane" role="tabpanel" aria-labelledby="trailers"
-                                tabindex="0">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Trailers
-                                    </div>
-                                    <div class="card-body">
-                                        <label for="trailer" class="form-label">Trailers</label>
-                                        <div class="row align-items-center mb-3">
-                                            <div class="col-md-6 text-start">
-                                                <select class="form-control" id="trailer" placeholder="Select..."
-                                                    autocomplete="off">
-                                                    <option disabled selected value>Select...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 text-start">
-                                                <button class="btn btn-primary sub-300" type="button"
-                                                    onclick="fixAllTrailer()">
-                                                    Fix All
-                                                    <i class="fas fa-star text-warning"
-                                                        title="TruckersHub Premium Feature"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary sub" type="button" onclick="switchTrailer()">
-                                            Switch
-                                            <i class="fas fa-star text-warning"
-                                                title="TruckersHub Standard Feature"></i>
-                                        </button>
-                                        <button class="btn btn-primary sub" type="button" onclick="fixTrailer()">
-                                            Fix
-                                            <i class="fas fa-star text-warning"
-                                                title="TruckersHub Standard Feature"></i>
-                                        </button>
-                                        <!-- <button class="btn btn-primary" type="button" onclick="configTrailer()">
-                                            Share Trailer Config
-                                        </button> -->
-                                        <p style="display: none;">Shared Trailer Unique ID: <span
-                                                id="configTrailerCode"></span></p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -565,12 +375,10 @@
         // City
         const srcCity = document.getElementById("srcCity");
         const destCity = document.getElementById("destCity");
-        const city = document.getElementById("city");
 
         // Company
         const srcCompany = document.getElementById("srcCompany");
         const destCompany = document.getElementById("destCompany");
-        const company = document.getElementById("company");
 
         const plannedDistance = document.getElementById("plannedDistance");
 
@@ -583,14 +391,8 @@
         const teleport = document.getElementById("teleport");
         const autoload = document.getElementById("autoload");
 
-        const trailer = document.getElementById("trailer");
-
         //
         const jobCode = document.getElementById("jobCode");
-        const positionCode = document.getElementById("positionCode");
-        const waypointsCode = document.getElementById("waypointsCode");
-        const configCode = document.getElementById("configCode");
-        const configTrailerCode = document.getElementById("configTrailerCode");
         const saveQuickAccess = document.getElementById("saveQuickAccess");
 
         // Tom Select Functions
