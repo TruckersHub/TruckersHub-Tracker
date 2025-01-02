@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>TruckersHub Client</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/truckershub.png">
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+        
+    <link rel="stylesheet" href="fontawesome/all.min.css">
+</head>
+
+<body>
+
+    <div id="preloader" class="spinner-wrapper">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <div class="draggable">
+            <h3>TruckersHub Client</h3>
+        </div>
+
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="images/truckershub.png" alt="">
+                <!-- <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt=""> -->
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Simulation Convoy
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right" id="menubar"></ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="deznav">
+            <div class="deznav-scroll" id="sidebar"></div>
+        </div>
+
+        <div class="content-body default-height">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-profile mb-4">
+                            <div class="card-header">
+                                <span>Simulation Convoy is to do simulation jobs with your friends.</span>
+                                <button class="btn btn-danger" type="button" onclick="closeConvoy()" id="closeBtn" style="display: none;">
+                                    Close Convoy
+                                </button>
+                                <button class="btn btn-danger" type="button" onclick="leaveConvoy()" id="leaveBtn" style="display: none;">
+                                    Leave Convoy
+                                </button>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="row" id="createConvoy">
+                                    <div class="col-md-6 text-start">
+                                        <label for="username" class="form-label">Convoy Name</label>
+                                        <input class="form-control" id="username" name="username" type="username" disabled>
+                                    </div>
+                                    <div class="col-md-6 text-start">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input class="form-control" id="password" name="password" type="text">
+                                    </div>
+                                </div>
+                                <div class="row" id="savegame" style="display: none;">
+                                    <h3>Simulation Convoy Details</h3>
+                                    <span id="playerData">
+                                        Players: 1/4
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <hr>
+                                    <div class="col-md-6 text-start" id="gameDiv">
+                                        <label for="game" class="form-label">Game</label>
+                                        <select class="form-control" id="game" onchange="decryptGame(this.value)">
+                                            <option disabled selected value>Select Game</option>
+                                            <option value="ets2">Euro Truck Simulator 2</option>
+                                            <option value="ats">American Truck Simulator</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 text-start" id="profileDiv" style="display: none;">
+                                        <label for="profiles" class="form-label">Profiles</label>
+                                        <select class="form-control" id="profiles"
+                                            onchange="decryptProfile(this.value)">
+                                            <option disabled selected value>Select Profile</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 text-start" id="savesDiv" style="display: none;">
+                                        <label for="saves" class="form-label">Game Saves</label>
+                                        <select class="form-control" id="saves" onchange="decryptSave(this.value)">
+                                            <option disabled selected value>Select Profile</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer" id="convoyfooter">
+                                <button class="btn btn-primary" type="button" onclick="createConvoy()">
+                                    Create Convoy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" id="simConvoyList">
+                        <div class="card card-profile mb-4">
+                            <div class="card-header">
+                                <span>Simulation Convoy List</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Players</th>
+                                                <!-- <th>Status</th> -->
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="convoyList"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <!-- VTC Jobs Tab -->
+                        <div class="card" id="simjobs" style="display: none;">
+                            <div class="card-header d-flex justify-content-between"
+                                style="z-index: 0 !important;">
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">VTC Jobs</h3>
+                                </div>
+                                <button class="btn btn-warning" type="button" onclick="simJobRefresh()" id="simJobRefresh">
+                                    Refresh Jobs List
+                                </button>
+                            </div>
+
+                            <div class="card-body p-9">
+                                <span class="text-danger">Only Convoy Leader can pick the job and then you can take the same job.</span>
+                                <table class="table card-text">
+                                    <thead>
+                                        <tr>
+                                            <th>Source</th>
+                                            <th>Destination</th>
+                                            <th>Cargo</th>
+                                            <th>Planned Distance</th>
+                                            <th>Game</th>
+                                            <th>DLCs Required</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="simJobsData"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    Copyright © TruckersHub 2023-24
+                </p>
+                <p id="version">
+                    Version V
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="convoyPassword" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Type Convoy Password
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6 text-start">
+                            <label for="convoyPass" class="form-label">Password</label>
+                            <input class="form-control" id="convoyPass" name="convoyPass" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success btn-sm" id="id" data-bs-dismiss="modal">
+                        Join Convoy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="vendor/select2/js/select2.full.min.js"></script>
+    
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            dezSettingsOptions.version = 'dark';
+            new dezSettings(dezSettingsOptions);
+            jQuery(window).on('resize', function () {
+                dezSettingsOptions.version = 'dark';
+                new dezSettings(dezSettingsOptions);
+                jQuery('.dz-theme-mode').addClass('active');
+            });
+        });
+    </script>
+
+    <script src="mainjs/common.js"></script>
+    <script src="mainjs/sim.js"></script>
+    <script src="mainjs/simconvoy.js"></script>
+</body>
+
+</html>
