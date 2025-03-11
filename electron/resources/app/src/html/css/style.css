@@ -28943,6 +28943,7 @@ button.cancelBtn.btn.btn-sm.btn-inverse, .btn-group-sm > button.cancelBtn.btn.bt
 [data-theme-version=dark] .select2-search--dropdown .select2-search__field {
   background: #111217;
   border-color: #333a54;
+  color: #fff;
 }
 
 .select2-dropdown {
