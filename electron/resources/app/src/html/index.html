@@ -23,9 +23,48 @@
     <link rel="stylesheet" href="fontawesome/all.min.css">
 
     <style>
-        .fa-solid.fa-signal:hover {
-            
+        #graphic {
+            height: 113px;
+            width: 113px;
+            margin-left: auto;
+            margin-bottom: 15px;
+            margin-right: auto;
+            border-radius: 100%;
         }
+
+        /* Range styling (horizontal) */
+        .vol {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 60%;
+            height: 6px;
+            background: #1f2937;
+            border-radius: 999px;
+            outline: none;
+        }
+        .vol::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #60a5fa;
+            box-shadow: 0 0 0 4px rgba(96,165,250,.25);
+            cursor: pointer;
+        }
+        .vol::-moz-range-thumb {
+            width: 16px; height: 16px; border-radius: 50%;
+            background: #60a5fa; border: none; cursor: pointer;
+        }
+
+        /* Progress fill (WebKit) */
+        .vol::-webkit-slider-runnable-track {
+            height: 6px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #60a5fa var(--p,0%), #1f2937 0);
+        }
+
+        .pct { width: 35%; text-align: right; opacity: .9; }
     </style>
 </head>
 
@@ -87,14 +126,14 @@
                     <div class="col-8">
                         <div class="row" id="blogList"></div>
                     </div>
-                    <div class="col-4" style="padding-left: 30px; position: fixed; right: 0;">
+                    <div class="col-4" style="padding-left: 30px; right: 0;">
                         <div class="d-flex justify-content-center mb-4" style="display: none !important;" id="connectDiscord">
                             <button onclick="connectDiscord()" type="button" class="btn btn-twitter">
                                 Connect Discord <span class="btn-icon-right"><i class="fab fa-discord"></i></span>
                             </button>
                         </div>
 
-                        <div class="card">
+                        <div class="card" style="height: auto;">
                             <div class="card-header">
                                 Gateways
                             </div>
@@ -180,6 +219,97 @@
                                             }
                                         }
                                     })();
+                                </script>
+                            </div>
+                        </div>
+
+                        <!-- Truckstop Radio -->
+                        <div class="card" style="height: auto;">
+                            <div class="card-header">
+                                TrruckStop Radio
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="" alt="" id="graphic">
+                                    <h3 id="title"></h3>
+                                    <a href="javascript:playpause()" class="badge badge-outline-primary">
+                                        <i class="fa-solid fa-play" style="font-size: x-large;" id="ppbtn"></i>
+                                    </a>
+                                    <audio id="player" src="https://oreo.truckstopradio.co.uk/listen/truckstopradio/radio.mp3"></audio>
+                                    <div class="row" role="group" aria-label="Volume controls">
+                                        <label for="vol">Volume</label>
+                                        <input id="vol" class="vol" type="range" min="0" max="100" step="1" value="80" />
+                                        <span id="pct" class="pct">80</span>%
+                                    </div>
+                                </div>
+                                <script>
+                                    fetch("https://truckstopradio.co.uk/api/cache?url=/song-database/public/current").then((body) => {
+                                        return body.json();
+                                    }).then((json) => {
+                                        document.getElementById("graphic").src = json?.data?.song?.graphic;
+                                        document.getElementById("title").innerText = json?.data?.song?.title;
+                                    }).catch((err) => {
+                                        console.log(err);
+                                    })
+
+                                    const player = document.getElementById("player");
+                                    const ppbtn = document.getElementById("ppbtn");
+                                    const vol = document.getElementById('vol');
+                                    const pct = document.getElementById('pct');
+                                    const KEY = 'player.volume';
+
+                                    // Restore last volume
+                                    const saved = localStorage.getItem(KEY);
+                                    if (saved !== null) {
+                                        const v = Math.max(0, Math.min(1, parseFloat(saved)));
+                                        player.volume = v;
+                                        vol.value = Math.round(v * 100);
+                                        pct.textContent = vol.value;
+                                        vol.style.setProperty('--p', vol.value + '%');
+                                    } else {
+                                        // initial from input value
+                                        player.volume = vol.value / 100;
+                                        vol.style.setProperty('--p', vol.value + '%');
+                                    }
+
+                                    // Update gradient fill for WebKit
+                                    const updateFill = () => vol.style.setProperty('--p', vol.value + '%');
+
+                                    // Optional: use an ear-friendly curve (log-ish) instead of linear
+                                    // Toggle this to true if you prefer it
+                                    const USE_LOG_CURVE = false;
+                                    const uiToAudioVolume = (ui0to100) => {
+                                        const x = ui0to100 / 100;
+                                        if (!USE_LOG_CURVE) return x;               // linear
+                                        // perceptual curve: quiet finer control
+                                        const minDb = -40;                           // floor
+                                        const v = Math.pow(10, (minDb * (1 - x)) / 20);
+                                        return Math.min(1, Math.max(0, v));
+                                    };
+                                    
+                                    vol.addEventListener('input', () => {
+                                        const v = uiToAudioVolume(parseInt(vol.value, 10));
+                                        player.volume = v;
+                                        pct.textContent = vol.value;
+                                        updateFill();
+                                        localStorage.setItem(KEY, String(v));
+                                    });
+
+                                    player.addEventListener('volumechange', () => {
+                                        if (!player.muted) localStorage.setItem(KEY, String(player.volume));
+                                    });
+
+                                    function playpause() {
+                                        if (ppbtn.classList.contains("fa-play")) {
+                                            ppbtn.classList.remove("fa-play");
+                                            ppbtn.classList.add("fa-pause");
+                                            player.play();
+                                        } else {
+                                            ppbtn.classList.add("fa-play");
+                                            ppbtn.classList.remove("fa-pause");
+                                            player.pause();
+                                        }
+                                    }
                                 </script>
                             </div>
                         </div>
