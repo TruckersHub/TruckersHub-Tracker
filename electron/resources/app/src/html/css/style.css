@@ -38242,6 +38242,7 @@ a:hover {
   min-height: 30px;
   z-index: 110;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: fixed;
 }
@@ -38249,6 +38250,12 @@ a:hover {
 .draggable h3 {
   margin-bottom: 0 !important;
   margin-left: 10px;
+  font-size: 1rem;
+}
+
+.draggable h3 img {
+  width: 1.3rem;
+  margin-right: 10px;
 }
 
 .p-a {
