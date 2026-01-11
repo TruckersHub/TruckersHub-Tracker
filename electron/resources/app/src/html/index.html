@@ -168,6 +168,11 @@
                                             name: "Germany (DE)",
                                             url: "wss://gateway-eu-de.truckershub.in/",
                                             ping: Infinity
+                                        },
+                                        {
+                                            name: "Singapore (Asia)",
+                                            url: "wss://gateway-sgp.truckershub.in/",
+                                            ping: Infinity
                                         }
                                     ]
 
@@ -237,85 +242,15 @@
                                 <div class="d-flex flex-column align-items-center">
                                     <img src="" alt="" id="graphic">
                                     <h3 id="title"></h3>
-                                    <a href="javascript:playpause()" class="badge badge-outline-primary">
+                                    <a href="javascript:radio.toggle()" class="badge badge-outline-primary">
                                         <i class="fa-solid fa-play" style="font-size: x-large;" id="ppbtn"></i>
                                     </a>
-                                    <audio id="player" src="https://oreo.truckstopradio.co.uk/listen/truckstopradio/radio.mp3"></audio>
                                     <div class="row" role="group" aria-label="Volume controls">
                                         <label for="vol">Volume</label>
                                         <input id="vol" class="vol" type="range" min="0" max="100" step="1" value="80" />
                                         <span id="pct" class="pct">80</span>%
                                     </div>
                                 </div>
-                                <script>
-                                    fetch("https://truckstopradio.co.uk/api/cache?url=/song-database/public/current").then((body) => {
-                                        return body.json();
-                                    }).then((json) => {
-                                        document.getElementById("graphic").src = json?.data?.song?.graphic;
-                                        document.getElementById("title").innerText = json?.data?.song?.title;
-                                    }).catch((err) => {
-                                        console.log(err);
-                                    })
-
-                                    const player = document.getElementById("player");
-                                    const ppbtn = document.getElementById("ppbtn");
-                                    const vol = document.getElementById('vol');
-                                    const pct = document.getElementById('pct');
-                                    const KEY = 'player.volume';
-
-                                    // Restore last volume
-                                    const saved = localStorage.getItem(KEY);
-                                    if (saved !== null) {
-                                        const v = Math.max(0, Math.min(1, parseFloat(saved)));
-                                        player.volume = v;
-                                        vol.value = Math.round(v * 100);
-                                        pct.textContent = vol.value;
-                                        vol.style.setProperty('--p', vol.value + '%');
-                                    } else {
-                                        // initial from input value
-                                        player.volume = vol.value / 100;
-                                        vol.style.setProperty('--p', vol.value + '%');
-                                    }
-
-                                    // Update gradient fill for WebKit
-                                    const updateFill = () => vol.style.setProperty('--p', vol.value + '%');
-
-                                    // Optional: use an ear-friendly curve (log-ish) instead of linear
-                                    // Toggle this to true if you prefer it
-                                    const USE_LOG_CURVE = false;
-                                    const uiToAudioVolume = (ui0to100) => {
-                                        const x = ui0to100 / 100;
-                                        if (!USE_LOG_CURVE) return x;               // linear
-                                        // perceptual curve: quiet finer control
-                                        const minDb = -40;                           // floor
-                                        const v = Math.pow(10, (minDb * (1 - x)) / 20);
-                                        return Math.min(1, Math.max(0, v));
-                                    };
-                                    
-                                    vol.addEventListener('input', () => {
-                                        const v = uiToAudioVolume(parseInt(vol.value, 10));
-                                        player.volume = v;
-                                        pct.textContent = vol.value;
-                                        updateFill();
-                                        localStorage.setItem(KEY, String(v));
-                                    });
-
-                                    player.addEventListener('volumechange', () => {
-                                        if (!player.muted) localStorage.setItem(KEY, String(player.volume));
-                                    });
-
-                                    function playpause() {
-                                        if (ppbtn.classList.contains("fa-play")) {
-                                            ppbtn.classList.remove("fa-play");
-                                            ppbtn.classList.add("fa-pause");
-                                            player.play();
-                                        } else {
-                                            ppbtn.classList.add("fa-play");
-                                            ppbtn.classList.remove("fa-pause");
-                                            player.pause();
-                                        }
-                                    }
-                                </script>
                             </div>
                         </div>
                     </div>
@@ -371,6 +306,7 @@
 
     <script src="mainjs/common.js"></script>
     <script src="mainjs/index.js"></script>
+    <script src="mainjs/radio.js"></script>
 </body>
 
 </html>
